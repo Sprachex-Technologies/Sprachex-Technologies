@@ -1,0 +1,74 @@
+/* Tailwind Configuration (to be loaded via CDN in HTML) */
+/* This file contains custom styles that extend Tailwind */
+
+/* Custom scrollbar for modern feel */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #050805;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1e271c;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #46ec13;
+}
+
+/* Glassmorphism Utilities */
+.glass-panel {
+    background: rgba(30, 39, 28, 0.4);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.glass-card {
+    background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: rgba(70, 236, 19, 0.3);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 40px -10px rgba(70, 236, 19, 0.1);
+}
+
+/* Subtle gradient animation background */
+.bg-gradient-orb {
+    background: radial-gradient(circle at 50% 50%, rgba(70, 236, 19, 0.08), transparent 60%);
+}
+
+/* Marquee Animation */
+@keyframes marquee {
+    0% {
+        transform: translateX(0%);
+    }
+    100% {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes marquee2 {
+    0% {
+        transform: translateX(100%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+.animate-marquee {
+    animation: marquee 25s linear infinite;
+}
+
+.animate-marquee2 {
+    animation: marquee2 25s linear infinite;
+}
