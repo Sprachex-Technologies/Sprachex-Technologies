@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Sprachex Technologies - European Excellence in IT</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-50 font-display selection:bg-primary selection:text-background-dark overflow-x-hidden">
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 flex justify-center pt-6 px-4">
+        <div class="glass-panel rounded-full px-6 py-3 flex items-center justify-between w-full max-w-6xl shadow-glass">
+            <div class="flex items-center gap-3 text-white">
+                <div class="size-8 rounded-full bg-primary/20 flex items-center justify-center text-primary">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">language</span>
+                </div>
+                <h2 class="text-white text-lg font-bold tracking-tight">Sprachex</h2>
+            </div>
+            <div class="hidden md:flex items-center gap-8">
+                <a class="text-slate-300 hover:text-white hover:scale-105 transition-all text-sm font-medium" href="#about">About</a>
+                <a class="text-slate-300 hover:text-white hover:scale-105 transition-all text-sm font-medium" href="#services">Services</a>
+                <a class="text-slate-300 hover:text-white hover:scale-105 transition-all text-sm font-medium" href="#products">Products</a>
+                <a class="text-slate-300 hover:text-white hover:scale-105 transition-all text-sm font-medium" href="#tech">Technology</a>
+            </div>
+            
+            <button id="openContact"
+                class="hidden md:flex bg-primary hover:bg-primary-dark hover:shadow-glow transition-all duration-300 text-background-dark font-bold text-sm px-6 py-2 rounded-full items-center gap-2">
+                <span>Let's Talk</span>
+                <span class="material-symbols-outlined text-sm font-bold">arrow_forward</span>
+            </button>
+
+            <button class="md:hidden text-white">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center pt-24 pb-12 px-4 overflow-hidden">
+        <div class="absolute top-0 left-1/4 w-[500px] h-[500px] bg-primary/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute bottom-0 right-1/4 w-[400px] h-[400px] bg-blue-500/5 rounded-full blur-[100px] pointer-events-none"></div>
+        
+        <div class="relative z-10 max-w-5xl mx-auto flex flex-col items-center text-center gap-8">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-glass-border bg-glass-surface backdrop-blur-sm">
+                <span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
+                <span class="text-xs font-medium text-slate-300 tracking-wide uppercase">German Engineering • Global Impact</span>
+            </div>
+            
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-black text-white leading-[1.1] tracking-tight">
+                Where Technology Speaks a <span class="text-transparent bg-clip-text bg-gradient-to-r from-primary to-emerald-400">Universal Language</span>
+            </h1>
+            
+            <p class="text-lg md:text-xl text-slate-400 max-w-2xl font-light leading-relaxed">
+                We build scalable, compliant, and intelligent solutions for the modern world. European excellence in AI, Engineering, Automation, and Innovation.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                <button id="openContact" class="bg-primary hover:bg-primary-dark hover:shadow-glow transition-all duration-300 text-background-dark font-bold text-base px-8 py-4 rounded-full flex items-center justify-center gap-2">
+                    Let's Work Together
+                    <span class="material-symbols-outlined">arrow_outward</span>
+                </button>
+                <button class="bg-transparent border border-glass-border hover:bg-white/5 text-white font-medium text-base px-8 py-4 rounded-full flex items-center justify-center gap-2 transition-colors">
+                    View Our Portfolio
+                </button>
+            </div>
+            
+            <div class="mt-12 w-full max-w-4xl glass-panel rounded-2xl p-2 md:p-4 rotate-x-12 perspective-1000">
+                <div class="relative w-full aspect-video rounded-xl overflow-hidden bg-background-dark">
+                    <div class="absolute inset-0 bg-cover bg-center opacity-80 mix-blend-screen" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCQL80wzs_9mNwmcj1bgo8FTHmM0kVYgRK4hKTPZKsvg0JnTTsAuARxNp8pNEIFGQxy4BgvWcJ28beHtQGosrTgvYTHQ7fhQudrau5gMPrH6pKjzeMHrz-rCg5fBxeTQNwWZ4UJUWvPZ5Ml2BECRYRr4oz6Whr2x0_K5LD3nkeraRbPzi52u8R0y_9vQv06fSbFBquHKyG7W2BZ0Qxg7ZozsPYlT5b9mu9XII-T-Gkoq7qDcIzFCxtZow2gC72C_QJFxU-Ps44Qd7DK');"></div>
+                    <div class="absolute inset-0 bg-gradient-to-t from-background-dark via-transparent to-transparent"></div>
+                    
+                    <div class="absolute bottom-6 left-6 right-6 flex justify-between items-end">
+                        <div class="glass-panel px-4 py-2 rounded-lg flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">verified_user</span>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-slate-400">System Status</span>
+                                <span class="text-sm font-bold text-white">GDPR Compliant</span>
+                            </div>
+                        </div>
+                        <div class="glass-panel px-4 py-2 rounded-lg flex items-center gap-3">
+                            <span class="material-symbols-outlined text-primary">memory</span>
+                            <div class="flex flex-col">
+                                <span class="text-xs text-slate-400">AI Model</span>
+                                <span class="text-sm font-bold text-white">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="py-20 px-4 relative" id="about">
+        <div class="max-w-6xl mx-auto">
+            <div class="glass-card rounded-2xl p-8 md:p-12 flex flex-col md:flex-row gap-12 items-center">
+                <div class="flex-1 space-y-6">
+                    <h2 class="text-primary font-bold tracking-wide uppercase text-sm">About Sprachex</h2>
+                    <h3 class="text-3xl md:text-4xl font-bold text-white leading-tight">Bridging complex technology and <span class="text-slate-400">human-centric design.</span></h3>
+                    <p class="text-slate-400 leading-relaxed">
+                        Based in Berlin, operating in India and Germany. We understand that in the European market, precision isn't just a preference—it's a requirement. We bridge the gap between complex algorithmic potential and compliant, user-friendly applications.
+                    </p>
+                    
+                </div>
+                <div class="flex-1 w-full h-full min-h-[300px] rounded-xl overflow-hidden relative">
+                    <div class="absolute inset-0 bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAtp_OCYg6DvKhX3Qbx0GPChGwNjw1NsKlkwuMrwpElD52V0xnmoxpdT6F995We0sQuV0-1wO-qEwUrLh5kJxpX6m7LKOH4Ndzivfnm0JJx043MNbAsHh79bQ2SQlJ4lMre8-m0rVoxte_QHbalXq1x07nvfg07_Yo4woYJQzfNcck-3ncocO9sj-nZmqtJr1BmnPMmoPk9dCnabUOp-ugwbH39kMoYnCwkTN66O-qWG6d2rzJsGKE4eybIY51wDHCVF20iwM4gzJLQ');"></div>
+                    <div class="absolute inset-0 bg-background-dark/30"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Core Offerings / Services -->
+    <section class="py-20 px-4" id="services">
+        <div class="max-w-6xl mx-auto flex flex-col gap-12">
+            <div class="flex flex-col md:flex-row justify-between items-end gap-6">
+                <div class="max-w-xl">
+                    <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">Core Offerings</h2>
+                    <h3 class="text-3xl md:text-5xl font-bold text-white">Precision Engineered Solutions</h3>
+                </div>
+                <button class="text-white hover:text-primary transition-colors flex items-center gap-2 font-medium">
+                    View All Services <span class="material-symbols-outlined">arrow_right_alt</span>
+                </button>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                <div class="glass-card p-6 rounded-xl flex flex-col gap-4 group cursor-pointer">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background-dark transition-all duration-300">
+                        <span class="material-symbols-outlined">psychology</span>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-white mb-2">Artificial Intelligence</h4>
+                        <p class="text-sm text-slate-400">Leveraging predictive models and NLP to drive business intelligence.</p>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-6 rounded-xl flex flex-col gap-4 group cursor-pointer">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background-dark transition-all duration-300">
+                        <span class="material-symbols-outlined">code</span>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-white mb-2">Software Engineering</h4>
+                        <p class="text-sm text-slate-400">Building robust, scalable architectures with German precision.</p>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-6 rounded-xl flex flex-col gap-4 group cursor-pointer">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background-dark transition-all duration-300">
+                        <span class="material-symbols-outlined">settings_suggest</span>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-white mb-2">Process Automation</h4>
+                        <p class="text-sm text-slate-400">Streamlining workflows to maximize efficiency and reduce error.</p>
+                    </div>
+                </div>
+                
+                <div class="glass-card p-6 rounded-xl flex flex-col gap-4 group cursor-pointer">
+                    <div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-background-dark transition-all duration-300">
+                        <span class="material-symbols-outlined">light_mode</span>
+                    </div>
+                    <div>
+                        <h4 class="text-xl font-bold text-white mb-2">Strategic Innovation</h4>
+                        <p class="text-sm text-slate-400">Future-proofing your business with cutting-edge tech stacks.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Products Showcase -->
+    <section class="py-20 px-4 bg-gradient-orb" id="products">
+        <div class="max-w-6xl mx-auto">
+            <div class="mb-12 text-center">
+                <h2 class="text-primary font-bold tracking-wide uppercase text-sm mb-2">Our Products</h2>
+                <h3 class="text-3xl md:text-4xl font-bold text-white">Built for the Enterprise</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="glass-card rounded-2xl overflow-hidden group">
+                    <div class="h-64 bg-slate-800 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCwI_W0XVniqGxUgllJrPSYO1isZq5RTBQpUr1HOplhYaoae5aWv4d1C2kyV9HdnaCXwo7M0RYmpdYVl5V542tJPyCL4AzclXto-svExQaUFldk9hJXV_5YBdvinHCQhc-uSe1I-sYdtjdu4iXRiVcZpL6_u6WaVCWFqwuFtBiSAaP-WbXbj5hc3MLpp6YC3iUTUv89GDvqtevx3TlChlVlZmtamfkGnIhlPoZTGCmmzTDHDaDrveR6dc_yw-O8wB4yvUYNURW4K_Jy');"></div>
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h4 class="text-2xl font-bold text-white">Sprachex Analytics</h4>
+                                <p class="text-primary text-sm font-medium mt-1">Data Intelligence Platform</p>
+                            </div>
+                            
+                            <span
+                                class="px-3 py-1 rounded-full bg-primary/15 text-primary text-xs font-semibold
+                                    border border-primary/30 backdrop-blur-sm">
+                                In Progress
+                            </span>
+
+                        </div>
+                        <p class="text-slate-400 mb-6">A comprehensive dashboard for visualizing complex datasets in real-time, designed for financial and logistics sectors.</p>
+                        <div class="flex gap-2">
+                            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-slate-300 border border-white/10">Big Data</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-slate-300 border border-white/10">Visualization</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="glass-card rounded-2xl overflow-hidden group">
+                    <div class="h-64 bg-slate-800 relative overflow-hidden">
+                        <div class="absolute inset-0 bg-cover bg-center transition-transform duration-500 group-hover:scale-110" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDO6Ma9_FioT7P6ss8GZjVysGUA9pNGzoZtyHA8JMwtpjP1HEqZLu0TF9GbG_sL26SZWeXkzlPnKzo9ASENFNWyjUcbw3SAmkRjVOOG152O_c12bYf4KFC7jZc259ItbgkUHEu9PLdDXGDfn06AepYGtesXgYcdzSNrb1m4r48EZjDrKu-EtosFWijWMMda2jLwFowjoxzpIMHKIUiKrgKDH6mHT6YwxDrwjSxMWheXsVCocCimaOvIa17xJ1fFGB21pMe5hLTNNfF6');"></div>
+                        <div class="absolute inset-0 bg-black/40 group-hover:bg-black/20 transition-colors"></div>
+                    </div>
+                    <div class="p-8">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h4 class="text-2xl font-bold text-white">SecureFlow</h4>
+                                <p class="text-primary text-sm font-medium mt-1">Compliance Automation</p>
+                            </div>
+                            <span
+                                class="px-3 py-1 rounded-full bg-primary/15 text-primary text-xs font-semibold
+                                    border border-primary/30 backdrop-blur-sm">
+                                In Progress
+                            </span>
+
+                        </div>
+                        <p class="text-slate-400 mb-6">Automate your GDPR and ISO compliance workflows securely. Reduce risk and overhead with intelligent auditing.</p>
+                        <div class="flex gap-2">
+                            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-slate-300 border border-white/10">Security</span>
+                            <span class="px-3 py-1 rounded-full bg-white/5 text-xs text-slate-300 border border-white/10">Automation</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Technology Ticker -->
+    <section class="py-12 border-y border-glass-border bg-black/20" id="tech">
+        <div class="max-w-7xl mx-auto px-4 text-center mb-8">
+            <h3 class="text-slate-400 text-sm font-semibold uppercase tracking-widest">Powered by modern standards</h3>
+        </div>
+        <div class="relative flex overflow-x-hidden group">
+            <div class="animate-marquee whitespace-nowrap flex gap-16 items-center">
+                <span class="text-2xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">Python</span>
+                <span class="text-2xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">React</span>
+                <span class="text-2xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">TensorFlow</span>
+                <span class="text-2xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">AWS</span>
+                <span class="text-2xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">Docker</span>
+                <span class="text-2xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">Kubernetes</span>
+                <span class="text-2xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">PostgreSQL</span>
+                <span class="text-2xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">Node.js</span>
+                <span class="text-2xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">Rust</span>
+                <span class="text-2xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">Python</span>
+                <span class="text-2xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">React</span>
+                <span class="text-2xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">TensorFlow</span>
+                <span class="text-2xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">AWS</span>
+                <span class="text-2xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">Docker</span>
+                <span class="text-2xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">Kubernetes</span>
+                <span class="text-2xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">PostgreSQL</span>
+                <span class="text-2xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">Node.js</span>
+                <span class="text-2xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">Rust</span>
+            </div>
+        </div>
+    </section>
+    <!-- Call to Action -->
+    <section class="py-24 px-4 relative">
+        <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
+            <div class="w-full max-w-lg h-96 bg-primary/5 blur-[100px] rounded-full"></div>
+        </div>
+        <div class="max-w-4xl mx-auto text-center relative z-10">
+            <h2 class="text-4xl md:text-6xl font-black text-white mb-6">Ready to innovate?</h2>
+            <p class="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">Let's discuss how Sprachex can transform your technical challenges into competitive advantages.</p>
+            <button id="openContactAlt" class="bg-primary hover:bg-primary-dark hover:shadow-glow hover:scale-105 transition-all duration-300 text-background-dark font-extrabold text-lg px-10 py-5 rounded-full inline-flex items-center gap-3">
+                <span>Start Your Project</span>
+                <span class="material-symbols-outlined">rocket_launch</span>
+            </button>
+        </div>
+    </section>
+
+    <!-- Contact Overlay Section -->
+    <section id="contactSection"
+        class="fixed inset-0 z-[60] hidden flex items-center justify-center px-4">
+
+        <!-- Background blur -->
+        <div class="absolute inset-0 bg-black/60 backdrop-blur-sm"></div>
+
+        <!-- Contact Card -->
+        <div class="relative z-10 max-w-lg w-full glass-card rounded-2xl p-8 md:p-10">
+
+            <div class="flex justify-between items-center mb-6">
+                <h3 class="text-2xl font-bold text-white">Let’s Connect</h3>
+                <button id="closeContact"
+                    class="text-slate-400 hover:text-white transition">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+
+            <div class="space-y-6 text-slate-300">
+
+                <!-- Email -->
+                <div class="flex items-center gap-4">
+                    <span class="material-symbols-outlined text-primary">mail</span>
+                    <a href="mailto:contact@sprachex.com"
+                    class="hover:text-white transition-colors font-medium">
+                        contact@sprachex.com
+                    </a>
+                </div>
+
+                <!-- LinkedIn -->
+                <div class="flex items-center gap-4">
+                    <span class="material-symbols-outlined text-primary">work</span>
+                    <a href="https://www.linkedin.com/company/110510961/admin/dashboard/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="hover:text-white transition-colors font-medium">
+                        LinkedIn – Sprachex
+                    </a>
+                </div>
+
+                <!-- Phone Numbers -->
+                <div class="pt-4 border-t border-white/10 space-y-3">
+
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-primary">call</span>
+                        <a href="tel:+919007896473"
+                        class="hover:text-white transition-colors font-medium">
+                            +91 90078 96473
+                        </a>
+                    </div>
+
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-primary">chat</span>
+                        <a href="https://wa.me/12013496997"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="hover:text-white transition-colors font-medium">
+                            +1 201 349 6997 (WhatsApp)
+                        </a>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-glass-border bg-[#020302] pt-16 pb-8 px-4">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12 mb-16">
+            <div class="col-span-1 md:col-span-1">
+                <div class="flex items-center gap-2 text-white mb-6">
+                    <span class="material-symbols-outlined text-primary">language</span>
+                    <h2 class="text-lg font-bold">Sprachex</h2>
+                </div>
+                <p class="text-slate-500 text-sm leading-relaxed">
+                    European excellence in AI and Engineering. Based in Berlin, Germany.
+                </p>
+            </div>
+            <div>
+                <h3 class="text-white font-bold mb-4">Company</h3>
+                <ul class="space-y-2">
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="#">About Us</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="#">Careers</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="#">Partners</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white font-bold mb-4">Services</h3>
+                <ul class="space-y-2">
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="#">AI Consulting</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="#">Software Development</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="#">Cloud Migration</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="#">Cybersecurity</a></li>
+                </ul>
+            </div>
+            <div>
+                <h3 class="text-white font-bold mb-4">Legal</h3>
+                <ul class="space-y-2">
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="#">Impressum</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="#">Privacy Policy</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="#">Terms of Service</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="#">Cookie Settings</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-6xl mx-auto pt-8 border-t border-glass-border flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-slate-600 text-sm">© 2024 Sprachex Technologies GmbH. All rights reserved.</p>
+            <div class="flex gap-4">
+                <a href="https://www.linkedin.com/company/110510961/admin/dashboard/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="text-slate-500 hover:text-white transition-colors">
+                                        <span class="sr-only">LinkedIn</span>
+                                        LinkedIn
+                                    </a>
+
+                <!-- <a class="text-slate-500 hover:text-white transition-colors" href="#"><span class="sr-only">LinkedIn</span>LinkedIn</a> -->
+                <!-- <a class="text-slate-500 hover:text-white transition-colors" href="#"><span class="sr-only">Twitter</span>Twitter</a>
+                <a class="text-slate-500 hover:text-white transition-colors" href="#"><span class="sr-only">GitHub</span>GitHub</a> -->
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner (GDPR) -->
+    <div class="fixed bottom-4 right-4 max-w-sm w-full z-50" id="cookieBanner">
+        <div class="glass-card p-6 rounded-xl shadow-2xl border border-glass-border">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-primary text-3xl">cookie</span>
+                <div>
+                    <h4 class="text-white font-bold mb-1">We value your privacy</h4>
+                    <p class="text-slate-400 text-xs mb-4">We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept", you consent to our use of cookies.</p>
+                    <div class="flex gap-2">
+                        <button id="acceptCookies" class="flex-1 bg-primary text-background-dark text-xs font-bold py-2 px-4 rounded-full hover:bg-primary-dark transition-colors">Accept</button>
+                        <button id="declineCookies" class="flex-1 bg-white/10 text-white text-xs font-medium py-2 px-4 rounded-full hover:bg-white/20 transition-colors">Decline</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
