@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Hero Paws App - Sprachex Technologies</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&amp;family=Manrope:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0c1324;
+            color: #dce1fb;
+            overflow-x: hidden;
+        }
+        .glass-panel {
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              "colors": {
+                      "primary-container": "#0e073f",
+                      "on-tertiary-fixed-variant": "#005227",
+                      "tertiary-fixed-dim": "#4de082",
+                      "on-background": "#dce1fb",
+                      "error": "#ffb4ab",
+                      "on-secondary": "#00363e",
+                      "on-error": "#690005",
+                      "primary-fixed-dim": "#c5c0ff",
+                      "outline-variant": "#47464f",
+                      "inverse-on-surface": "#2a3043",
+                      "primary": "#c5c0ff",
+                      "on-secondary-fixed-variant": "#004e5a",
+                      "primary-fixed": "#e3dfff",
+                      "secondary-fixed": "#a2eeff",
+                      "on-primary-fixed": "#181348",
+                      "background": "#0c1324",
+                      "surface-container-lowest": "#070d1f",
+                      "on-primary-fixed-variant": "#444076",
+                      "tertiary-fixed": "#6dfe9c",
+                      "outline": "#928f9a",
+                      "on-secondary-container": "#00515d",
+                      "on-error-container": "#ffdad6",
+                      "surface-variant": "#2e3447",
+                      "surface-container": "#191f31",
+                      "on-tertiary-fixed": "#00210c",
+                      "on-tertiary": "#003919",
+                      "on-primary-container": "#7b77b1",
+                      "surface-bright": "#33394c",
+                      "on-primary": "#2d295e",
+                      "surface-container-low": "#151b2d",
+                      "error-container": "#93000a",
+                      "on-secondary-fixed": "#001f25",
+                      "surface-container-high": "#23293c",
+                      "secondary-container": "#00cbe6",
+                      "secondary": "#5de6ff",
+                      "surface-container-highest": "#2e3447",
+                      "on-surface": "#dce1fb",
+                      "surface-tint": "#c5c0ff",
+                      "surface": "#0c1324",
+                      "on-surface-variant": "#c8c5d0",
+                      "secondary-fixed-dim": "#2fd9f4",
+                      "tertiary-container": "#001606",
+                      "inverse-surface": "#dce1fb",
+                      "inverse-primary": "#5c5890",
+                      "tertiary": "#4de082",
+                      "surface-dim": "#0c1324",
+                      "on-tertiary-container": "#009049"
+              },
+              "borderRadius": {
+                      "DEFAULT": "0.125rem",
+                      "lg": "0.25rem",
+                      "xl": "0.5rem",
+                      "full": "0.75rem"
+              },
+              "fontFamily": {
+                      "headline": ["Space Grotesk"],
+                      "body": ["Manrope"],
+                      "label": ["Manrope"]
+              }
+            },
+          },
+        }
+    </script>
+</head>
+<body class="font-body selection:bg-secondary/30">
+<nav class="flex justify-between items-center w-full px-8 h-20 fixed top-0 z-50 bg-[#0c1324]/80 backdrop-blur-3xl bg-gradient-to-b from-[#0c1324] to-[#0e073f]">
+<div class="flex items-center gap-4">
+<span class="text-2xl font-bold tracking-tighter text-[#c5c0ff] font-['Space_Grotesk']">Sprachex Technologies</span>
+</div>
+<div class="hidden md:flex items-center gap-8 font-['Space_Grotesk'] tracking-tight">
+<a class="text-[#5de6ff] border-b-2 border-[#5de6ff] pb-1 transition-colors duration-300" href="#">Dashboard</a>
+<a class="text-slate-400 hover:text-[#5de6ff] transition-colors duration-300" href="#">Health</a>
+<a class="text-slate-400 hover:text-[#5de6ff] transition-colors duration-300" href="#">Workflow</a>
+<a class="text-slate-400 hover:text-[#5de6ff] transition-colors duration-300" href="#">Sites</a>
+</div>
+<div class="flex items-center gap-6">
+<button class="text-[#c5c0ff] hover:text-[#5de6ff] transition-colors duration-300 flex items-center">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="text-[#c5c0ff] hover:text-[#5de6ff] transition-colors duration-300 flex items-center">
+<span class="material-symbols-outlined">settings</span>
+</button>
+<div class="w-10 h-10 rounded-full bg-primary-container border border-outline-variant overflow-hidden">
+<img alt="User profile avatar" class="w-full h-full object-cover" data-alt="professional headshot of a person with friendly expression in soft studio lighting against a dark background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBgTvJiL5KA1LIkIjUu_n-AGnpa9A4gc8raha7Dr3sOB9jYQe0ymfIOGgYYV84jmS-32YBy9-_CrvhyI2uM9gvf9ZST1IJ-awNwqj57ktFTGGeRlHAGhKFuLb023kwQ4Dbz-luKh6agEhr0E032-poQAXPmnWUblpVJbrWwvmDr3WUd4o0Hw1GoskbI9Y-VaElcREPC5iLgFVQ4SCzpqbG-ERa7PM_CITaiuNV1V4v4f5g8egFXPMzEn5pxZoNODMmFnx1XipzU2wsh"/>
+</div>
+</div>
+</nav>
+<aside class="hidden lg:flex flex-col h-screen w-72 left-0 top-0 fixed py-8 border-r border-white/5 bg-[#0c1324]/60 backdrop-blur-2xl shadow-[40px_0_60px_rgba(255,255,255,0.02)] z-40">
+<div class="px-8 mb-12 mt-20">
+<h2 class="text-xl font-bold font-['Space_Grotesk'] text-[#c5c0ff]">Kinetic Oracle</h2>
+<p class="text-xs text-slate-500 uppercase tracking-widest font-medium">AI-Driven Precision</p>
+</div>
+<nav class="flex-1 px-4 space-y-2 font-['Manrope'] font-medium">
+<a class="flex items-center gap-4 px-4 py-3 text-[#4de082] bg-[#4de082]/10 rounded-r-full transition-all translate-x-1" href="#">
+<span class="material-symbols-outlined">psychology</span>
+<span>Insights</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined">bolt</span>
+<span>Automation</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined">auto_awesome</span>
+<span>Generator</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined">insert_chart</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 hover:bg-white/5 transition-all" href="#">
+<span class="material-symbols-outlined">help</span>
+<span>Support</span>
+</a>
+</nav>
+<div class="px-6 mb-8">
+<button class="w-full py-4 bg-primary text-on-primary rounded-full font-bold text-sm tracking-tight hover:brightness-110 transition-all">
+                Upgrade to Pro
+            </button>
+</div>
+<div class="px-4 border-t border-white/5 pt-6">
+<a class="flex items-center gap-4 px-4 py-3 text-slate-500 hover:text-error transition-all" href="#">
+<span class="material-symbols-outlined">logout</span>
+<span>Log Out</span>
+</a>
+</div>
+</aside>
+<main class="lg:ml-72 pt-28 pb-32 px-6 lg:px-12 max-w-7xl mx-auto">
+<header class="mb-12">
+<div class="flex items-center gap-2 mb-2">
+<span class="px-3 py-1 bg-tertiary-container text-tertiary rounded-full text-[10px] font-bold tracking-widest uppercase">System Live</span>
+<span class="text-slate-500 text-xs font-medium">Sprachex AI Core active</span>
+</div>
+<h1 class="text-5xl lg:text-7xl font-headline font-bold text-on-surface tracking-tighter mb-4">Hero Paws <span class="text-primary">App</span></h1>
+<p class="text-lg text-on-surface-variant max-w-2xl font-light">Next-generation pet monitoring powered by The Kinetic Oracle AI. Precision wellness for your elite companions.</p>
+</header>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-6">
+<section class="md:col-span-8 space-y-6">
+<div class="relative h-[400px] rounded-full overflow-hidden bg-surface-container-low group">
+<img alt="Hero dog portrait" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" data-alt="majestic golden retriever sitting proudly in a high-tech studio with dramatic blue rim lighting and deep indigo shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCsPj8grMOL5D61Ug6hnPYnVvOnCRteOiShlSnbX2RtpWIkg7W4g7r2lKgTmRpd16ScPqCR0PkjDH9Hg1Ca_wUeNfnEnRdZQa2UlqdpJF63ZV2F093GpclkC8p1SkA_sQc979Wfy-F9GSBmsFBN1Ltw5jM4pDMehVdY5KSfKLGJzHouKb7Rpg9aYQt3fhONszs2nsLxiMF07CXSiRuOoDJ5CXBKeLYbcAa-njDf6YBWgPHaaK3ACg5lo891yjcd0hAgG5xTAqjC1VTJ"/>
+<div class="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent"></div>
+<div class="absolute bottom-10 left-10 right-10 flex justify-between items-end">
+<div>
+<h3 class="text-3xl font-headline font-bold text-white mb-1">Commander Apollo</h3>
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary animate-pulse"></span>
+<span class="text-sm font-medium text-slate-300">Vital signs optimal • Elite Performance</span>
+</div>
+</div>
+<div class="flex gap-2">
+<div class="glass-panel bg-white/10 px-4 py-2 rounded-xl text-center">
+<span class="block text-xs text-secondary-fixed-dim uppercase tracking-tighter font-bold">Activity</span>
+<span class="text-xl font-headline font-bold text-white">94%</span>
+</div>
+<div class="glass-panel bg-white/10 px-4 py-2 rounded-xl text-center">
+<span class="block text-xs text-tertiary-fixed-dim uppercase tracking-tighter font-bold">Health</span>
+<span class="text-xl font-headline font-bold text-white">A+</span>
+</div>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+<div class="glass-panel bg-surface-container/60 p-8 rounded-full border border-outline-variant/10">
+<div class="flex items-center justify-between mb-8">
+<span class="text-xs font-bold uppercase tracking-widest text-secondary">AI Health Assistant</span>
+<span class="material-symbols-outlined text-secondary">psychology</span>
+</div>
+<div class="space-y-4 mb-8">
+<div class="bg-primary-container/40 p-4 rounded-xl rounded-tl-none border border-white/5">
+<p class="text-sm text-on-surface-variant">Apollo's heart rate variability suggests he is 15% more recovered than yesterday. Ideal for intense training.</p>
+</div>
+<div class="bg-surface-container-highest/60 p-4 rounded-xl rounded-tr-none border border-white/5 ml-auto w-4/5 text-right">
+<p class="text-sm text-on-surface">Schedule 20min session?</p>
+</div>
+</div>
+<div class="relative">
+<input class="w-full bg-surface-container-lowest border border-outline-variant/30 rounded-full py-3 px-6 text-sm focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all" placeholder="Query Kinetic Oracle..." type="text"/>
+<button class="absolute right-2 top-1.5 p-1.5 text-secondary">
+<span class="material-symbols-outlined">send</span>
+</button>
+</div>
+</div>
+<div class="glass-panel bg-surface-container-high/60 p-8 rounded-full border border-outline-variant/10">
+<div class="flex items-center justify-between mb-8">
+<span class="text-xs font-bold uppercase tracking-widest text-tertiary">Pawsome Activity</span>
+<span class="material-symbols-outlined text-tertiary">pets</span>
+</div>
+<div class="flex items-center justify-center h-32 mb-6">
+<div class="relative w-32 h-32 flex items-center justify-center">
+<svg class="w-full h-full -rotate-90">
+<circle class="text-white/5" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-width="8"></circle>
+<circle class="text-tertiary" cx="64" cy="64" fill="transparent" r="58" stroke="currentColor" stroke-dasharray="364.4" stroke-dashoffset="100" stroke-width="8"></circle>
+</svg>
+<div class="absolute text-center">
+<span class="block text-2xl font-headline font-bold">12k</span>
+<span class="text-[10px] text-slate-500 uppercase">Steps</span>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="bg-background/50 p-3 rounded-2xl">
+<span class="text-[10px] text-slate-500 block uppercase">Distance</span>
+<span class="font-bold text-on-surface">8.4 km</span>
+</div>
+<div class="bg-background/50 p-3 rounded-2xl">
+<span class="text-[10px] text-slate-500 block uppercase">Duration</span>
+<span class="font-bold text-on-surface">1h 42m</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section class="md:col-span-4 space-y-6">
+<div class="glass-panel bg-gradient-to-br from-primary-container to-background p-8 rounded-full border border-outline-variant/10 h-full">
+<h4 class="text-xs font-bold uppercase tracking-widest text-[#c5c0ff] mb-6">Smart Wellness</h4>
+<div class="space-y-6">
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-secondary/20 transition-all">
+<span class="material-symbols-outlined text-secondary">monitor_heart</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Heart Rate</p>
+<p class="text-xs text-slate-500">72 BPM • Stable</p>
+</div>
+<span class="ml-auto text-secondary text-xs font-bold font-headline">+2%</span>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-tertiary/20 transition-all">
+<span class="material-symbols-outlined text-tertiary">thermostat</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Body Temp</p>
+<p class="text-xs text-slate-500">38.5°C • Normal</p>
+</div>
+<span class="ml-auto text-tertiary text-xs font-bold font-headline">±0°</span>
+</div>
+<div class="flex items-center gap-4 group">
+<div class="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center group-hover:bg-primary/20 transition-all">
+<span class="material-symbols-outlined text-primary">bedtime</span>
+</div>
+<div>
+<p class="text-sm font-bold text-on-surface">Sleep Quality</p>
+<p class="text-xs text-slate-500">Deep • 8.5 Hours</p>
+</div>
+<span class="ml-auto text-primary text-xs font-bold font-headline">98%</span>
+</div>
+</div>
+<div class="mt-12 p-6 rounded-full bg-white/5 border border-white/5">
+<p class="text-xs text-slate-400 italic mb-4">"The Kinetic Oracle predicts a peak performance window at 16:30 today based on resting trends."</p>
+<button class="w-full py-3 bg-transparent border border-secondary/50 text-secondary rounded-full text-xs font-bold tracking-widest uppercase hover:bg-secondary hover:text-primary-container transition-all">
+                            View Detailed Report
+                        </button>
+</div>
+<div class="mt-8">
+<div class="aspect-video rounded-3xl overflow-hidden grayscale contrast-125 opacity-40 hover:opacity-80 transition-opacity">
+<img alt="Data visualization map" class="w-full h-full object-cover" data-alt="a dark futuristic digital map showing topographical lines and glowing blue data points across an urban terrain" data-location="London" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDbZRmRQZI4YryR9Mxg8M3gOROomm1uo-QqrFsBazalkSrILfbJ5jhhzN_Ow9hE2BLFORZFcaLiAlMGJr37OhPlR5U18ZLHbg075g7siDTO7ViwcglRgvkbxwLWTii1oXu-1keIKWTC6Gtq8_wx82jdpi4arPARJ6h29sL-II3_bgDDfFu8G-O9NzhJjz3GWNe83kDvtGBTCY7KN6vLvynCqSDiutAP_Z2fjSvaOMcSxs4MeEYQvfOMS0HZddO6PhV38_bdAM7oVe2J"/>
+</div>
+</div>
+</div>
+</section>
+</div>
+<section class="mt-12 grid grid-cols-1 md:grid-cols-4 gap-6">
+<div class="bg-surface-container-lowest p-6 rounded-full flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-slate-500 mb-2">calendar_month</span>
+<span class="text-xs text-slate-500 uppercase font-bold tracking-widest">Next Vet</span>
+<span class="text-sm font-bold text-on-surface">14 Oct</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-full flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-slate-500 mb-2">restaurant</span>
+<span class="text-xs text-slate-500 uppercase font-bold tracking-widest">Meal Plan</span>
+<span class="text-sm font-bold text-on-surface">High Protein</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-full flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-slate-500 mb-2">medication</span>
+<span class="text-xs text-slate-500 uppercase font-bold tracking-widest">Supplements</span>
+<span class="text-sm font-bold text-on-surface">Glucosamine</span>
+</div>
+<div class="bg-surface-container-lowest p-6 rounded-full flex flex-col items-center justify-center text-center">
+<span class="material-symbols-outlined text-slate-500 mb-2">group</span>
+<span class="text-xs text-slate-500 uppercase font-bold tracking-widest">Pack Mode</span>
+<span class="text-sm font-bold text-on-surface">Synchronized</span>
+</div>
+</section>
+</main>
+<footer class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-6 pb-6 pt-2 bg-[#0c1324]/90 backdrop-blur-xl bg-gradient-to-t from-[#0e073f] to-[#0c1324] shadow-[0_-20px_40px_rgba(14,7,63,0.5)] rounded-t-3xl">
+<button class="flex flex-col items-center justify-center bg-[#c5c0ff] text-[#0e073f] rounded-full p-3 scale-110 duration-300">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Home</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 p-3 hover:text-[#5de6ff] transition-colors duration-300">
+<span class="material-symbols-outlined">pets</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Activity</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 p-3 hover:text-[#5de6ff] transition-colors duration-300">
+<span class="material-symbols-outlined">auto_graph</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">AI Insights</span>
+</button>
+<button class="flex flex-col items-center justify-center text-slate-400 p-3 hover:text-[#5de6ff] transition-colors duration-300">
+<span class="material-symbols-outlined">person</span>
+<span class="font-['Manrope'] text-[10px] font-bold uppercase tracking-widest mt-1">Profile</span>
+</button>
+</footer>
+</body></html>
