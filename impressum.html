@@ -11,6 +11,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        // Brand theme (standalone — this page does not load script.js)
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#E5252C",
+                        "primary-dark": "#B91C1C",
+                        "gold": "#F5A623",
+                        "silver": "#C7CCD4",
+                        "background-dark": "#0A0A0C",
+                        "surface-dark": "#101014",
+                        "glass-border": "rgba(255, 255, 255, 0.08)",
+                        "glass-surface": "rgba(255, 255, 255, 0.03)",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: { "DEFAULT": "2px", "lg": "4px", "xl": "6px", "2xl": "8px", "full": "9999px" },
+                    boxShadow: {
+                        "glow": "0 0 24px rgba(229, 37, 44, 0.35)",
+                        "glass": "0 8px 32px 0 rgba(0, 0, 0, 0.37)"
+                    }
+                }
+            }
+        };
+    </script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-background-dark text-slate-50 font-display selection:bg-primary selection:text-white overflow-x-hidden">
