@@ -35,7 +35,7 @@
                 <a class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide" href="#tech">Technology</a>
             </div>
             <button id="openContact"
-                class="hidden md:flex bg-primary hover:bg-primary-dark hover:shadow-glow transition-all duration-300 text-white font-bold text-sm px-6 py-2.5 rounded items-center gap-2">
+                class="btn-sheen hidden md:flex bg-primary hover:bg-primary-dark hover:shadow-glow transition-all duration-300 text-white font-bold text-sm px-6 py-2.5 rounded items-center gap-2">
                 <span>Let's Talk</span>
                 <span class="material-symbols-outlined text-sm font-bold">arrow_forward</span>
             </button>
@@ -47,8 +47,8 @@
 
     <!-- Hero -->
     <section class="relative min-h-screen flex items-center pt-32 pb-20 px-6 overflow-hidden bg-blueprint">
-        <div class="absolute top-1/4 -left-32 w-[420px] h-[420px] bg-primary/10 rounded-full blur-[140px] pointer-events-none"></div>
-        <div class="absolute bottom-0 right-0 w-[380px] h-[380px] bg-gold/10 rounded-full blur-[120px] pointer-events-none"></div>
+        <div class="absolute top-1/4 -left-32 w-[420px] h-[420px] bg-primary/10 rounded-full blur-[140px] pointer-events-none parallax parallax-1"></div>
+        <div class="absolute bottom-0 right-0 w-[380px] h-[380px] bg-gold/10 rounded-full blur-[120px] pointer-events-none parallax parallax-2"></div>
 
         <div class="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
             <div class="lg:col-span-7 flex flex-col gap-8 hero-stagger">
@@ -67,7 +67,7 @@
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4 mt-2">
-                    <button id="openContactAlt" class="bg-primary hover:bg-primary-dark hover:shadow-glow transition-all duration-300 text-white font-bold text-base px-8 py-4 rounded flex items-center justify-center gap-2">
+                    <button id="openContactAlt" class="btn-sheen bg-primary hover:bg-primary-dark hover:shadow-glow transition-all duration-300 text-white font-bold text-base px-8 py-4 rounded flex items-center justify-center gap-2">
                         Let's Work Together
                         <span class="material-symbols-outlined">arrow_outward</span>
                     </button>
@@ -94,7 +94,7 @@
                 </div>
             </div>
 
-            <div class="lg:col-span-5 hidden lg:flex items-center justify-center relative">
+            <div class="lg:col-span-5 hidden lg:flex items-center justify-center relative parallax parallax-2">
                 <div class="absolute w-[380px] h-[380px] bg-primary/10 rounded-full blur-[100px]"></div>
                 <img src="assets/sprachex-mark.png" alt="Sprachex S mark" class="relative w-[360px] anim-float"/>
             </div>
@@ -143,7 +143,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-white/[0.08] border hairline rounded overflow-hidden">
                 <div class="bg-background-dark p-8 flex flex-col gap-5 group cursor-pointer hover:bg-surface-dark transition-colors">
                     <div class="flex items-center justify-between">
-                        <span class="material-symbols-outlined text-primary text-3xl">psychology</span>
+                        <span class="material-symbols-outlined text-primary text-3xl icon-pop">psychology</span>
                         <span class="font-mono text-xs text-slate-600">/01</span>
                     </div>
                     <div>
@@ -153,7 +153,7 @@
                 </div>
                 <div class="bg-background-dark p-8 flex flex-col gap-5 group cursor-pointer hover:bg-surface-dark transition-colors">
                     <div class="flex items-center justify-between">
-                        <span class="material-symbols-outlined text-primary text-3xl">code</span>
+                        <span class="material-symbols-outlined text-primary text-3xl icon-pop">code</span>
                         <span class="font-mono text-xs text-slate-600">/02</span>
                     </div>
                     <div>
@@ -163,7 +163,7 @@
                 </div>
                 <div class="bg-background-dark p-8 flex flex-col gap-5 group cursor-pointer hover:bg-surface-dark transition-colors">
                     <div class="flex items-center justify-between">
-                        <span class="material-symbols-outlined text-primary text-3xl">settings_suggest</span>
+                        <span class="material-symbols-outlined text-primary text-3xl icon-pop">settings_suggest</span>
                         <span class="font-mono text-xs text-slate-600">/03</span>
                     </div>
                     <div>
@@ -173,7 +173,7 @@
                 </div>
                 <div class="bg-background-dark p-8 flex flex-col gap-5 group cursor-pointer hover:bg-surface-dark transition-colors">
                     <div class="flex items-center justify-between">
-                        <span class="material-symbols-outlined text-primary text-3xl">light_mode</span>
+                        <span class="material-symbols-outlined text-primary text-3xl icon-pop">light_mode</span>
                         <span class="font-mono text-xs text-slate-600">/04</span>
                     </div>
                     <div>
@@ -194,7 +194,7 @@
             </div>
 
             <!-- Flagship: Order By -->
-            <a href="orderby.html" class="glass-card glass-card-gold rounded-xl overflow-hidden block group/ob">
+            <a href="orderby.html" class="glass-card glass-card-gold tilt-card rounded-xl overflow-hidden block group/ob">
                 <div class="grid grid-cols-1 lg:grid-cols-12">
                     <div class="lg:col-span-4 flex items-center justify-center p-12">
                         <img src="assets/orderby-logo.png" alt="Order By" class="w-full max-w-[280px] transition-transform duration-500 group-hover/ob:scale-105"/>
@@ -233,7 +233,7 @@
             <p class="section-index">04 — TECHNOLOGY</p>
             <h3 class="text-slate-400 text-sm font-mono uppercase tracking-[0.3em] mt-2">Powered by modern standards</h3>
         </div>
-        <div class="relative flex overflow-x-hidden group">
+        <div class="relative flex overflow-x-hidden group marquee-mask">
             <div class="animate-marquee whitespace-nowrap flex gap-16 items-center font-mono">
                 <span class="text-xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">Python</span>
                 <span class="text-xl font-bold text-slate-600 hover:text-white transition-colors cursor-default">React</span>
@@ -268,7 +268,7 @@
             <span class="de-flag-bar" style="width:32px;height:16px;"><span></span><span></span><span></span></span>
             <h2 class="text-4xl md:text-6xl font-black text-white">Ready to innovate?</h2>
             <p class="text-xl text-slate-400 max-w-2xl">Let's discuss how Sprachex can transform your technical challenges into competitive advantages.</p>
-            <button id="openContactCta" class="bg-primary hover:bg-primary-dark hover:shadow-glow hover:scale-[1.02] transition-all duration-300 text-white font-extrabold text-lg px-10 py-5 rounded inline-flex items-center gap-3">
+            <button id="openContactCta" class="btn-sheen bg-primary hover:bg-primary-dark hover:shadow-glow hover:scale-[1.02] transition-all duration-300 text-white font-extrabold text-lg px-10 py-5 rounded inline-flex items-center gap-3">
                 <span>Start Your Project</span>
                 <span class="material-symbols-outlined">rocket_launch</span>
             </button>
@@ -372,7 +372,7 @@
     <div class="fixed bottom-4 right-4 max-w-sm w-full z-50" id="cookieBanner">
         <div class="glass-panel p-6 rounded-xl shadow-2xl">
             <div class="flex items-start gap-4">
-                <span class="material-symbols-outlined text-primary text-3xl">cookie</span>
+                <span class="material-symbols-outlined text-primary text-3xl icon-pop">cookie</span>
                 <div>
                     <h4 class="text-white font-bold mb-1">We value your privacy</h4>
                     <p class="text-slate-400 text-xs mb-4">We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept", you consent to our use of cookies.</p>

@@ -171,6 +171,62 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 });
 
+// ============================================================
+// Animations II — progress bar, hero parallax, card tilt
+// ============================================================
+document.addEventListener('DOMContentLoaded', function () {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
+    // 1. Scroll progress bar
+    const bar = document.createElement('div');
+    bar.id = 'scrollProgress';
+    document.body.appendChild(bar);
+    const updateBar = () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+    };
+    window.addEventListener('scroll', updateBar, { passive: true });
+    updateBar();
+
+    // 2. Hero mouse parallax (desktop pointers only)
+    const hero = document.querySelector('section');
+    if (hero && window.matchMedia('(pointer: fine)').matches) {
+        hero.addEventListener('mousemove', e => {
+            const r = hero.getBoundingClientRect();
+            const px = ((e.clientX - r.left) / r.width - 0.5) * 2;   // -1 .. 1
+            const py = ((e.clientY - r.top) / r.height - 0.5) * 2;
+            hero.querySelectorAll('.parallax-1, .parallax-2').forEach(el => {
+                el.style.setProperty('--px', px.toFixed(3));
+                el.style.setProperty('--py', py.toFixed(3));
+            });
+        });
+        hero.addEventListener('mouseleave', () => {
+            hero.querySelectorAll('.parallax-1, .parallax-2').forEach(el => {
+                el.style.setProperty('--px', 0);
+                el.style.setProperty('--py', 0);
+            });
+        });
+    }
+
+    // 3. Flagship card 3D tilt (desktop pointers only)
+    if (window.matchMedia('(pointer: fine)').matches) {
+        document.querySelectorAll('.tilt-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const r = card.getBoundingClientRect();
+                const x = (e.clientX - r.left) / r.width - 0.5;
+                const y = (e.clientY - r.top) / r.height - 0.5;
+                card.style.setProperty('--tiltY', (x * 4) + 'deg');
+                card.style.setProperty('--tiltX', (-y * 4) + 'deg');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.setProperty('--tiltY', '0deg');
+                card.style.setProperty('--tiltX', '0deg');
+            });
+        });
+    }
+});
+
 // Cookie Banner Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const cookieBanner = document.getElementById('cookieBanner');
