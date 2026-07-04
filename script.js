@@ -127,6 +127,50 @@ contactSection.addEventListener("click", (e) => {
 });
 
 
+// ============================================================
+// Animations — scroll reveal, navbar solidify (no backend)
+// ============================================================
+document.addEventListener('DOMContentLoaded', function () {
+    // 1. Navbar solidifies on scroll
+    const nav = document.querySelector('nav');
+    if (nav) {
+        const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+    }
+
+    // 2. Scroll-reveal: tag content blocks, then reveal with stagger
+    const revealTargets = document.querySelectorAll(
+        'section .glass-card, section .grid > div, section .section-index, ' +
+        'section h2, section h3, section > div > p, footer .grid > div'
+    );
+    revealTargets.forEach(el => {
+        // skip hero (has its own entrance animation)
+        if (el.closest('.hero-stagger')) return;
+        el.classList.add('reveal');
+    });
+
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                // stagger siblings that arrive in the same viewport batch
+                const siblings = el.parentElement
+                    ? Array.from(el.parentElement.children).filter(c => c.classList.contains('reveal'))
+                    : [el];
+                const idx = Math.max(0, siblings.indexOf(el));
+                el.style.setProperty('--reveal-delay', (Math.min(idx, 8) * 0.09) + 's');
+                el.classList.add('visible');
+                io.unobserve(el);
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    } else {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+});
+
 // Cookie Banner Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const cookieBanner = document.getElementById('cookieBanner');
