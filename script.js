@@ -1,28 +1,33 @@
-// Tailwind Configuration
+// Tailwind Configuration — Sprachex brand system (German engineering palette)
 tailwind.config = {
     darkMode: "class",
     theme: {
         extend: {
             colors: {
-                "primary": "#46ec13",
-                "primary-dark": "#36b80f",
-                "background-light": "#f6f8f6",
-                "background-dark": "#050805",
+                "primary": "#E5252C",          // Sprachex signal red
+                "primary-dark": "#B91C1C",
+                "gold": "#F5A623",             // Sprachex gold accent
+                "silver": "#C7CCD4",           // metallic silver text
+                "background-light": "#f6f7f8",
+                "background-dark": "#0A0A0C",  // near-black engineering base
+                "surface-dark": "#101014",
                 "glass-border": "rgba(255, 255, 255, 0.08)",
                 "glass-surface": "rgba(255, 255, 255, 0.03)",
             },
             fontFamily: {
-                "display": ["Manrope", "sans-serif"]
+                "display": ["Manrope", "sans-serif"],
+                "mono": ["JetBrains Mono", "monospace"]
             },
-            borderRadius: { 
-                "DEFAULT": "1rem", 
-                "lg": "2rem", 
-                "xl": "3rem", 
-                "2xl": "4rem", 
-                "full": "9999px" 
+            borderRadius: {
+                "DEFAULT": "2px",
+                "lg": "4px",
+                "xl": "6px",
+                "2xl": "8px",
+                "full": "9999px"
             },
             boxShadow: {
-                "glow": "0 0 20px rgba(70, 236, 19, 0.3)",
+                "glow": "0 0 24px rgba(229, 37, 44, 0.35)",
+                "glow-gold": "0 0 24px rgba(245, 166, 35, 0.25)",
                 "glass": "0 8px 32px 0 rgba(0, 0, 0, 0.37)"
             },
             animation: {
@@ -101,7 +106,7 @@ closeBtn?.addEventListener("click", () => {
 // });
 
 ///const contactSection = document.getElementById("contactSection");
-const openButtons = document.querySelectorAll("#openContact, #openContactAlt");
+const openButtons = document.querySelectorAll("#openContact, #openContactAlt, #openContactCta");
 const closeButton = document.getElementById("closeContact");
 
 openButtons.forEach(btn => {

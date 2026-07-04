@@ -1,74 +1,120 @@
-/* Tailwind Configuration (to be loaded via CDN in HTML) */
-/* This file contains custom styles that extend Tailwind */
+/* ============================================================
+   Sprachex Technologies — Engineering Design System
+   German high-tech aesthetic: precise, dark, hairline borders
+   ============================================================ */
 
-/* Custom scrollbar for modern feel */
+/* Custom scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #050805;
+    background: #0A0A0C;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #1e271c;
-    border-radius: 4px;
+    background: #26262c;
+    border-radius: 0;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #46ec13;
+    background: #E5252C;
 }
 
-/* Glassmorphism Utilities */
+/* Panels — flat, precise, hairline borders */
 .glass-panel {
-    background: rgba(30, 39, 28, 0.4);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border: 1px solid rgba(255, 255, 255, 0.05);
+    background: rgba(16, 16, 20, 0.72);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .glass-card {
-    background: linear-gradient(145deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
+    background: linear-gradient(160deg, rgba(255, 255, 255, 0.035) 0%, rgba(255, 255, 255, 0.008) 100%);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    transition: all 0.3s ease;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .glass-card:hover {
-    border-color: rgba(70, 236, 19, 0.3);
-    transform: translateY(-4px);
-    box-shadow: 0 10px 40px -10px rgba(70, 236, 19, 0.1);
+    border-color: rgba(229, 37, 44, 0.45);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px -12px rgba(229, 37, 44, 0.18);
 }
 
-/* Subtle gradient animation background */
+/* Gold variant hover (flagship product) */
+.glass-card-gold:hover {
+    border-color: rgba(245, 166, 35, 0.5);
+    box-shadow: 0 12px 40px -12px rgba(245, 166, 35, 0.2);
+}
+
+/* Blueprint grid background */
+.bg-blueprint {
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 48px 48px;
+}
+
+/* Radial accent glow */
 .bg-gradient-orb {
-    background: radial-gradient(circle at 50% 50%, rgba(70, 236, 19, 0.08), transparent 60%);
+    background: radial-gradient(circle at 50% 50%, rgba(229, 37, 44, 0.06), transparent 60%);
 }
 
-/* Marquee Animation */
+/* German flag hairline (black · red · gold) */
+.de-flag-bar {
+    display: inline-flex;
+    width: 24px;
+    height: 12px;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 1px;
+}
+.de-flag-bar span { flex: 1; }
+.de-flag-bar span:nth-child(1) { background: #1a1a1a; }
+.de-flag-bar span:nth-child(2) { background: #DD0000; }
+.de-flag-bar span:nth-child(3) { background: #FFCC00; }
+
+/* Section index numbers */
+.section-index {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.2em;
+    color: #E5252C;
+}
+
+/* Hairline divider */
+.hairline {
+    border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* Scroll reveal */
+.reveal {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Marquee */
 @keyframes marquee {
-    0% {
-        transform: translateX(0%);
-    }
-    100% {
-        transform: translateX(-100%);
-    }
+    0%   { transform: translateX(0%); }
+    100% { transform: translateX(-100%); }
 }
 
 @keyframes marquee2 {
-    0% {
-        transform: translateX(100%);
-    }
-    100% {
-        transform: translateX(0%);
-    }
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(0%); }
 }
 
-.animate-marquee {
-    animation: marquee 25s linear infinite;
-}
+.animate-marquee  { animation: marquee 30s linear infinite; }
+.animate-marquee2 { animation: marquee2 30s linear infinite; }
 
-.animate-marquee2 {
-    animation: marquee2 25s linear infinite;
+/* Logo treatment */
+.logo-mark {
+    filter: drop-shadow(0 0 12px rgba(229, 37, 44, 0.25));
 }
