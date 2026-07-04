@@ -115,12 +115,12 @@ openButtons.forEach(btn => {
     });
 });
 
-closeButton.addEventListener("click", () => {
+closeButton?.addEventListener("click", () => {
     contactSection.classList.add("hidden");
 });
 
 // Close on background click
-contactSection.addEventListener("click", (e) => {
+contactSection?.addEventListener("click", (e) => {
     if (e.target === contactSection) {
         contactSection.classList.add("hidden");
     }
@@ -232,6 +232,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const cookieBanner = document.getElementById('cookieBanner');
     const acceptBtn = document.getElementById('acceptCookies');
     const declineBtn = document.getElementById('declineCookies');
+    if (!cookieBanner) return;
 
     // Check if user has already made a choice
     if (localStorage.getItem('cookieConsent')) {
@@ -239,13 +240,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Accept cookies
-    acceptBtn.addEventListener('click', function() {
+    acceptBtn?.addEventListener('click', function() {
         localStorage.setItem('cookieConsent', 'accepted');
         cookieBanner.style.display = 'none';
     });
 
     // Decline cookies
-    declineBtn.addEventListener('click', function() {
+    declineBtn?.addEventListener('click', function() {
         localStorage.setItem('cookieConsent', 'declined');
         cookieBanner.style.display = 'none';
     });
