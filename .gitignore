@@ -11,11 +11,15 @@
 *.xlsx
 *.pdf
 
-# Asset files
+# Asset files (except website assets)
 *.png
 *.jpg
 *.jpeg
 *.gif
+!assets/**/*.png
+!assets/**/*.jpg
+!assets/**/*.jpeg
+!assets/**/*.gif
 
 # Node
 node_modules/
