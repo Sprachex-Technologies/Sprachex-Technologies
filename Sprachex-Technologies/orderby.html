@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>OrderBy — Hyperlocal Commerce Platform by Sprachex</title>
+    <meta name="description" content="OrderBy: Bringing neighbourhood shops online without taking away what makes them special. Digital khata, OTP-verified handover, and hyperlocal commerce — fully digital."/>
+    <link rel="icon" type="image/png" href="assets/favicon.png"/>
+    <meta property="og:title" content="OrderBy by Sprachex Technologies"/>
+    <meta property="og:description" content="Hyperlocal Commerce Platform for neighbourhood shops"/>
+    <meta property="og:image" content="assets/orderby-logo.png"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-background-dark text-slate-50 font-display selection:bg-primary selection:text-white overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b hairline bg-background-dark/80 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="assets/sprachex-mark.png" alt="Sprachex Technologies" class="h-10 w-auto logo-mark"/>
+                <div class="flex flex-col leading-none">
+                    <span class="text-white text-base font-extrabold tracking-[0.18em]">SPRACHEX</span>
+                    <span class="text-slate-500 text-[10px] font-mono tracking-[0.32em] mt-1">TECHNOLOGIES</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide" href="index.html#about">About</a>
+                <a class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide" href="index.html#services">Services</a>
+                <a class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide" href="index.html#products">Products</a>
+                <a class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide" href="index.html#tech">Technology</a>
+            </div>
+            <button id="openContact"
+                class="btn-sheen hidden md:flex bg-primary hover:bg-primary-dark hover:shadow-glow transition-all duration-300 text-white font-bold text-sm px-6 py-2.5 rounded items-center gap-2">
+                <span>Let's Talk</span>
+                <span class="material-symbols-outlined text-sm font-bold">arrow_forward</span>
+            </button>
+            <button class="md:hidden text-white">
+                <span class="material-symbols-outlined">menu</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative min-h-screen flex items-center pt-32 pb-20 px-6 overflow-hidden bg-blueprint">
+        <div class="absolute top-1/4 -left-32 w-[420px] h-[420px] bg-gold/10 rounded-full blur-[140px] pointer-events-none parallax parallax-1"></div>
+        <div class="absolute bottom-0 right-0 w-[380px] h-[380px] bg-primary/10 rounded-full blur-[120px] pointer-events-none parallax parallax-2"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div class="lg:col-span-7 flex flex-col gap-8 hero-stagger">
+                <div class="inline-flex items-center gap-3 self-start px-4 py-2 border hairline bg-glass-surface backdrop-blur-sm rounded">
+                    <span class="text-xs font-mono text-gold tracking-[0.2em] uppercase">🛒 Primary Product</span>
+                    <span class="text-xs font-mono text-slate-300 tracking-[0.2em] uppercase">Live & Growing</span>
+                </div>
+
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight">
+                    Neighbourhood shops,<br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-gold via-primary to-gold text-shimmer">digitally empowered.</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-slate-400 max-w-xl font-light leading-relaxed">
+                    Discovery, ordering, OTP-verified handover, and the digital khata — fully integrated. Your neighborhood keeps its customers, its pricing, its cash. We're the rails.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 mt-2">
+                    <a href="https://orderby.sprachex.com" target="_blank" class="btn-sheen bg-gold hover:bg-gold/90 hover:shadow-glow transition-all duration-300 text-black font-bold text-base px-8 py-4 rounded flex items-center justify-center gap-2">
+                        Launch OrderBy
+                        <span class="material-symbols-outlined">arrow_outward</span>
+                    </a>
+                    <button id="openContact" class="btn-sheen bg-white/10 hover:bg-white/20 hover:border-white/40 transition-all duration-300 text-white font-bold text-base px-8 py-4 rounded flex items-center justify-center gap-2 border hairline">
+                        Get Started
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 hidden lg:flex items-center justify-center relative parallax parallax-2">
+                <div class="absolute w-[380px] h-[380px] bg-gold/10 rounded-full blur-[100px]"></div>
+                <img src="assets/orderby-logo.png" alt="OrderBy" class="relative w-[320px] anim-float"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Features -->
+    <section class="py-24 px-6 border-t hairline" id="features">
+        <div class="max-w-7xl mx-auto flex flex-col gap-14">
+            <div class="text-center">
+                <p class="section-index mb-3">01 — CORE FEATURES</p>
+                <h3 class="text-3xl md:text-5xl font-bold text-white">Built for hyperlocal commerce</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Feature 1 -->
+                <div class="glass-card p-8 rounded-xl border hairline hover:border-gold/50 transition-all">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-gold/15 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-gold">storefront</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white">Shop Discovery</h4>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed">Hyperlocal discovery engine that connects customers to neighborhood shops with precision targeting and community-driven recommendations.</p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="glass-card p-8 rounded-xl border hairline hover:border-gold/50 transition-all">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/15 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">shopping_cart</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white">Seamless Ordering</h4>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed">Simple, intuitive ordering flow optimized for mobile-first customers. Real-time inventory sync keeps shops and customers in perfect alignment.</p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="glass-card p-8 rounded-xl border hairline hover:border-gold/50 transition-all">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-slate-500/15 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-slate-300">verified_user</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white">OTP Handover</h4>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed">Secure, verified delivery verification. One-time passwords ensure safe handover and build trust between shops and customers.</p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="glass-card p-8 rounded-xl border hairline hover:border-gold/50 transition-all">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-primary/15 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-primary">receipt_long</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white">Digital Khata</h4>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed">Digitize the traditional credit ledger. Built-in credit management that shops trust, with transparent payment tracking and settlement automation.</p>
+                </div>
+
+                <!-- Feature 5 -->
+                <div class="glass-card p-8 rounded-xl border hairline hover:border-gold/50 transition-all">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-gold/15 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-gold">payments</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white">COD-First Design</h4>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed">Cash-on-delivery native. Designed for markets where digital payments are secondary — shops keep their cash, their terms, their control.</p>
+                </div>
+
+                <!-- Feature 6 -->
+                <div class="glass-card p-8 rounded-xl border hairline hover:border-gold/50 transition-all">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-lg bg-slate-500/15 flex items-center justify-center">
+                            <span class="material-symbols-outlined text-slate-300">analytics</span>
+                        </div>
+                        <h4 class="text-xl font-bold text-white">Shop Analytics</h4>
+                    </div>
+                    <p class="text-slate-400 leading-relaxed">Real-time insights into orders, customers, and trends. Actionable data that helps shops grow without overwhelming them with complexity.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-24 px-6 border-t hairline bg-gradient-orb">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="section-index mb-3">02 — HOW IT WORKS</p>
+                <h3 class="text-3xl md:text-5xl font-bold text-white">The OrderBy Flow</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="relative">
+                    <div class="glass-card p-8 rounded-xl border hairline h-full flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-lg bg-gold/20 text-gold font-bold flex items-center justify-center mb-4">1</div>
+                            <h4 class="text-lg font-bold text-white mb-2">Discover</h4>
+                            <p class="text-sm text-slate-400">Find neighborhood shops near you with instant access to catalogs, reviews, and real-time availability.</p>
+                        </div>
+                    </div>
+                    <div class="hidden lg:block absolute top-1/2 -right-3 w-6 h-6 text-gold/40">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="glass-card p-8 rounded-xl border hairline h-full flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-lg bg-primary/20 text-primary font-bold flex items-center justify-center mb-4">2</div>
+                            <h4 class="text-lg font-bold text-white mb-2">Order</h4>
+                            <p class="text-sm text-slate-400">Add items to your cart and place an order. Real-time confirmation from the shop keeps you in the loop.</p>
+                        </div>
+                    </div>
+                    <div class="hidden lg:block absolute top-1/2 -right-3 w-6 h-6 text-primary/40">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="glass-card p-8 rounded-xl border hairline h-full flex flex-col justify-between">
+                        <div>
+                            <div class="w-10 h-10 rounded-lg bg-slate-500/20 text-slate-300 font-bold flex items-center justify-center mb-4">3</div>
+                            <h4 class="text-lg font-bold text-white mb-2">Verify</h4>
+                            <p class="text-sm text-slate-400">Receive an OTP for secure handover. Verified delivery ensures both shop and customer are protected.</p>
+                        </div>
+                    </div>
+                    <div class="hidden lg:block absolute top-1/2 -right-3 w-6 h-6 text-slate-500/40">
+                        <span class="material-symbols-outlined">arrow_forward</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-8 rounded-xl border hairline h-full flex flex-col justify-between">
+                    <div>
+                        <div class="w-10 h-10 rounded-lg bg-gold/20 text-gold font-bold flex items-center justify-center mb-4">4</div>
+                        <h4 class="text-lg font-bold text-white mb-2">Settle</h4>
+                        <p class="text-sm text-slate-400">Automatic ledger entries. Pay now or use digital khata — the shop has full control.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why OrderBy -->
+    <section class="py-24 px-6 border-t hairline">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <p class="section-index mb-3">03 — WHY ORDERBY</p>
+                <h3 class="text-3xl md:text-5xl font-bold text-white">Built on trust, not displacement</h3>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-gold/15 text-gold">
+                                <span class="material-symbols-outlined">check_circle</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">Shops Keep Control</h4>
+                            <p class="text-slate-400">Shops set their own prices, manage their own customers, and keep their cash. We provide the platform, not the terms.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-primary/15 text-primary">
+                                <span class="material-symbols-outlined">check_circle</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">Zero Integration Friction</h4>
+                            <p class="text-slate-400">No complex APIs or training required. Shops onboard in minutes with an intuitive mobile-first interface.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-slate-500/15 text-slate-300">
+                                <span class="material-symbols-outlined">check_circle</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">Community-Driven</h4>
+                            <p class="text-slate-400">Built for markets where neighborhood trust matters. Your shop, your community, your customers — digitized.</p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0">
+                            <div class="flex items-center justify-center h-12 w-12 rounded-lg bg-gold/15 text-gold">
+                                <span class="material-symbols-outlined">check_circle</span>
+                            </div>
+                        </div>
+                        <div>
+                            <h4 class="text-xl font-bold text-white mb-2">Compliance by Design</h4>
+                            <p class="text-slate-400">GDPR-compliant, secure, and built with data privacy as a core principle — not an afterthought.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div class="absolute inset-0 bg-gradient-to-br from-gold/10 to-primary/10 rounded-2xl blur-3xl"></div>
+                    <div class="relative glass-card p-12 rounded-2xl border hairline">
+                        <div class="space-y-6">
+                            <div class="border-b border-white/10 pb-6">
+                                <p class="text-sm text-slate-400 mb-2">For Customers</p>
+                                <p class="text-2xl font-bold text-white">Neighborhood shops at your fingertips</p>
+                            </div>
+                            <div class="border-b border-white/10 pb-6">
+                                <p class="text-sm text-slate-400 mb-2">For Shops</p>
+                                <p class="text-2xl font-bold text-white">Your business, digitized — not disrupted</p>
+                            </div>
+                            <div>
+                                <p class="text-sm text-slate-400 mb-2">For Communities</p>
+                                <p class="text-2xl font-bold text-white">Local commerce, modernized</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-28 px-6 relative bg-blueprint border-t hairline">
+        <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
+            <div class="w-full max-w-lg h-96 bg-gold/5 blur-[110px] rounded-full"></div>
+        </div>
+        <div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center gap-8">
+            <h2 class="text-4xl md:text-6xl font-black text-white">Ready to join us?</h2>
+            <p class="text-xl text-slate-400 max-w-2xl">Whether you're a customer, shop owner, or community leader — OrderBy is here to serve you.</p>
+            <div class="flex flex-col sm:flex-row gap-4 mt-4">
+                <a href="https://orderby.sprachex.com" target="_blank" class="btn-sheen bg-gold hover:bg-gold/90 hover:shadow-glow transition-all duration-300 text-black font-bold text-lg px-10 py-4 rounded inline-flex items-center gap-2">
+                    Launch OrderBy
+                    <span class="material-symbols-outlined">arrow_outward</span>
+                </a>
+                <button id="openContactCta" class="btn-sheen bg-white/10 hover:bg-white/20 hover:border-white/40 transition-all duration-300 text-white font-bold text-lg px-10 py-4 rounded inline-flex items-center gap-2 border hairline">
+                    Get Started
+                    <span class="material-symbols-outlined">arrow_forward</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Overlay -->
+    <section id="contactSection" class="fixed inset-0 z-[60] hidden flex items-center justify-center px-4">
+        <div class="absolute inset-0 bg-black/70 backdrop-blur-sm"></div>
+        <div class="relative z-10 max-w-lg w-full glass-panel rounded-xl p-8 md:p-10">
+            <div class="flex justify-between items-center mb-8">
+                <div class="flex items-center gap-3">
+                    <img src="assets/sprachex-mark.png" alt="" class="h-8 w-auto"/>
+                    <h3 class="text-2xl font-bold text-white">Let's Connect</h3>
+                </div>
+                <button id="closeContact" class="text-slate-400 hover:text-white transition">
+                    <span class="material-symbols-outlined">close</span>
+                </button>
+            </div>
+            <div class="space-y-6 text-slate-300">
+                <div class="flex items-center gap-4">
+                    <span class="material-symbols-outlined text-gold">mail</span>
+                    <a href="mailto:contact@sprachex.com" class="hover:text-white transition-colors font-medium">contact@sprachex.com</a>
+                </div>
+                <div class="flex items-center gap-4">
+                    <span class="material-symbols-outlined text-gold">work</span>
+                    <a href="https://www.linkedin.com/company/110510961/" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors font-medium">LinkedIn — Sprachex</a>
+                </div>
+                <div class="pt-4 border-t hairline space-y-3">
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-gold">call</span>
+                        <a href="tel:+919007896473" class="hover:text-white transition-colors font-medium">+91 90078 96473</a>
+                    </div>
+                    <div class="flex items-center gap-4">
+                        <span class="material-symbols-outlined text-gold">chat</span>
+                        <a href="https://wa.me/12013496997" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors font-medium">+1 201 349 6997 (WhatsApp)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t hairline bg-[#050506] pt-16 pb-8 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+            <div class="md:col-span-5">
+                <div class="flex items-center gap-3 mb-6">
+                    <img src="assets/sprachex-mark.png" alt="Sprachex" class="h-9 w-auto"/>
+                    <div class="flex flex-col leading-none">
+                        <span class="text-white text-sm font-extrabold tracking-[0.18em]">SPRACHEX</span>
+                        <span class="text-slate-500 text-[9px] font-mono tracking-[0.32em] mt-1">TECHNOLOGIES</span>
+                    </div>
+                </div>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                    OrderBy is a product by Sprachex Technologies — precision-engineered for hyperlocal commerce.
+                </p>
+                <div class="flex flex-col gap-1.5 text-sm text-slate-500">
+                    <span class="text-slate-400 font-medium">Sprachex Technologies Private Limited</span>
+                    <span>P 124 Jogendra Garden, Haltu,<br/>Kolkata, West Bengal, India — 700078</span>
+                    <span class="font-mono text-xs mt-2 text-slate-600">CIN: U62090WB2025PTC285518</span>
+                </div>
+            </div>
+            <div class="md:col-span-3">
+                <h3 class="text-white font-bold mb-4 text-sm tracking-wide">Quick Links</h3>
+                <ul class="space-y-2">
+                    <li><a class="text-slate-500 hover:text-gold text-sm transition-colors" href="https://orderby.sprachex.com">OrderBy Platform</a></li>
+                    <li><a class="text-slate-500 hover:text-gold text-sm transition-colors" href="index.html">Back to Sprachex</a></li>
+                    <li><a class="text-slate-500 hover:text-gold text-sm transition-colors" href="mailto:contact@sprachex.com">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-4">
+                <h3 class="text-white font-bold mb-4 text-sm tracking-wide">Contact</h3>
+                <ul class="space-y-2">
+                    <li><a class="text-slate-500 hover:text-gold text-sm transition-colors" href="mailto:contact@sprachex.com">contact@sprachex.com</a></li>
+                    <li><a class="text-slate-500 hover:text-gold text-sm transition-colors" href="tel:+919007896473">+91 90078 96473</a></li>
+                    <li><a class="text-slate-500 hover:text-gold text-sm transition-colors" href="https://wa.me/12013496997" target="_blank" rel="noopener noreferrer">+1 201 349 6997 (WhatsApp)</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 border-t hairline flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-slate-600 text-sm font-mono">© 2026 Sprachex Technologies Private Limited. All rights reserved.</p>
+            <p class="text-slate-600 text-xs font-mono tracking-wide">Deutsch. Innovativ. Global gedacht.</p>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner (GDPR) -->
+    <div class="fixed bottom-4 right-4 max-w-sm w-full z-50" id="cookieBanner">
+        <div class="glass-panel p-6 rounded-xl shadow-2xl">
+            <div class="flex items-start gap-4">
+                <span class="material-symbols-outlined text-gold text-3xl icon-pop">cookie</span>
+                <div>
+                    <h4 class="text-white font-bold mb-1">We value your privacy</h4>
+                    <p class="text-slate-400 text-xs mb-4">We use cookies to enhance your browsing experience and analyze our traffic. By clicking "Accept", you consent to our use of cookies.</p>
+                    <div class="flex gap-2">
+                        <button id="acceptCookies" class="flex-1 bg-gold text-black text-xs font-bold py-2 px-4 rounded hover:bg-gold/90 transition-colors">Accept</button>
+                        <button id="declineCookies" class="flex-1 bg-white/10 text-white text-xs font-medium py-2 px-4 rounded hover:bg-white/20 transition-colors">Decline</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
