@@ -1,28 +1,33 @@
-// Tailwind Configuration
+// Tailwind Configuration — Sprachex brand system (German engineering palette)
 tailwind.config = {
     darkMode: "class",
     theme: {
         extend: {
             colors: {
-                "primary": "#46ec13",
-                "primary-dark": "#36b80f",
-                "background-light": "#f6f8f6",
-                "background-dark": "#050805",
+                "primary": "#E5252C",          // Sprachex signal red
+                "primary-dark": "#B91C1C",
+                "gold": "#F5A623",             // Sprachex gold accent
+                "silver": "#C7CCD4",           // metallic silver text
+                "background-light": "#f6f7f8",
+                "background-dark": "#0A0A0C",  // near-black engineering base
+                "surface-dark": "#101014",
                 "glass-border": "rgba(255, 255, 255, 0.08)",
                 "glass-surface": "rgba(255, 255, 255, 0.03)",
             },
             fontFamily: {
-                "display": ["Manrope", "sans-serif"]
+                "display": ["Manrope", "sans-serif"],
+                "mono": ["JetBrains Mono", "monospace"]
             },
-            borderRadius: { 
-                "DEFAULT": "1rem", 
-                "lg": "2rem", 
-                "xl": "3rem", 
-                "2xl": "4rem", 
-                "full": "9999px" 
+            borderRadius: {
+                "DEFAULT": "2px",
+                "lg": "4px",
+                "xl": "6px",
+                "2xl": "8px",
+                "full": "9999px"
             },
             boxShadow: {
-                "glow": "0 0 20px rgba(70, 236, 19, 0.3)",
+                "glow": "0 0 24px rgba(229, 37, 44, 0.35)",
+                "glow-gold": "0 0 24px rgba(245, 166, 35, 0.25)",
                 "glass": "0 8px 32px 0 rgba(0, 0, 0, 0.37)"
             },
             animation: {
@@ -101,7 +106,7 @@ closeBtn?.addEventListener("click", () => {
 // });
 
 ///const contactSection = document.getElementById("contactSection");
-const openButtons = document.querySelectorAll("#openContact, #openContactAlt");
+const openButtons = document.querySelectorAll("#openContact, #openContactAlt, #openContactCta");
 const closeButton = document.getElementById("closeContact");
 
 openButtons.forEach(btn => {
@@ -110,23 +115,124 @@ openButtons.forEach(btn => {
     });
 });
 
-closeButton.addEventListener("click", () => {
+closeButton?.addEventListener("click", () => {
     contactSection.classList.add("hidden");
 });
 
 // Close on background click
-contactSection.addEventListener("click", (e) => {
+contactSection?.addEventListener("click", (e) => {
     if (e.target === contactSection) {
         contactSection.classList.add("hidden");
     }
 });
 
 
+// ============================================================
+// Animations — scroll reveal, navbar solidify (no backend)
+// ============================================================
+document.addEventListener('DOMContentLoaded', function () {
+    // 1. Navbar solidifies on scroll
+    const nav = document.querySelector('nav');
+    if (nav) {
+        const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 24);
+        window.addEventListener('scroll', onScroll, { passive: true });
+        onScroll();
+    }
+
+    // 2. Scroll-reveal: tag content blocks, then reveal with stagger
+    const revealTargets = document.querySelectorAll(
+        'section .glass-card, section .grid > div, section .section-index, ' +
+        'section h2, section h3, section > div > p, footer .grid > div'
+    );
+    revealTargets.forEach(el => {
+        // skip hero (has its own entrance animation)
+        if (el.closest('.hero-stagger')) return;
+        el.classList.add('reveal');
+    });
+
+    if ('IntersectionObserver' in window) {
+        const io = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                const el = entry.target;
+                // stagger siblings that arrive in the same viewport batch
+                const siblings = el.parentElement
+                    ? Array.from(el.parentElement.children).filter(c => c.classList.contains('reveal'))
+                    : [el];
+                const idx = Math.max(0, siblings.indexOf(el));
+                el.style.setProperty('--reveal-delay', (Math.min(idx, 8) * 0.09) + 's');
+                el.classList.add('visible');
+                io.unobserve(el);
+            });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+    } else {
+        document.querySelectorAll('.reveal').forEach(el => el.classList.add('visible'));
+    }
+});
+
+// ============================================================
+// Animations II — progress bar, hero parallax, card tilt
+// ============================================================
+document.addEventListener('DOMContentLoaded', function () {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (reduceMotion) return;
+
+    // 1. Scroll progress bar
+    const bar = document.createElement('div');
+    bar.id = 'scrollProgress';
+    document.body.appendChild(bar);
+    const updateBar = () => {
+        const max = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (max > 0 ? (window.scrollY / max) * 100 : 0) + '%';
+    };
+    window.addEventListener('scroll', updateBar, { passive: true });
+    updateBar();
+
+    // 2. Hero mouse parallax (desktop pointers only)
+    const hero = document.querySelector('section');
+    if (hero && window.matchMedia('(pointer: fine)').matches) {
+        hero.addEventListener('mousemove', e => {
+            const r = hero.getBoundingClientRect();
+            const px = ((e.clientX - r.left) / r.width - 0.5) * 2;   // -1 .. 1
+            const py = ((e.clientY - r.top) / r.height - 0.5) * 2;
+            hero.querySelectorAll('.parallax-1, .parallax-2').forEach(el => {
+                el.style.setProperty('--px', px.toFixed(3));
+                el.style.setProperty('--py', py.toFixed(3));
+            });
+        });
+        hero.addEventListener('mouseleave', () => {
+            hero.querySelectorAll('.parallax-1, .parallax-2').forEach(el => {
+                el.style.setProperty('--px', 0);
+                el.style.setProperty('--py', 0);
+            });
+        });
+    }
+
+    // 3. Flagship card 3D tilt (desktop pointers only)
+    if (window.matchMedia('(pointer: fine)').matches) {
+        document.querySelectorAll('.tilt-card').forEach(card => {
+            card.addEventListener('mousemove', e => {
+                const r = card.getBoundingClientRect();
+                const x = (e.clientX - r.left) / r.width - 0.5;
+                const y = (e.clientY - r.top) / r.height - 0.5;
+                card.style.setProperty('--tiltY', (x * 4) + 'deg');
+                card.style.setProperty('--tiltX', (-y * 4) + 'deg');
+            });
+            card.addEventListener('mouseleave', () => {
+                card.style.setProperty('--tiltY', '0deg');
+                card.style.setProperty('--tiltX', '0deg');
+            });
+        });
+    }
+});
+
 // Cookie Banner Functionality
 document.addEventListener('DOMContentLoaded', function() {
     const cookieBanner = document.getElementById('cookieBanner');
     const acceptBtn = document.getElementById('acceptCookies');
     const declineBtn = document.getElementById('declineCookies');
+    if (!cookieBanner) return;
 
     // Check if user has already made a choice
     if (localStorage.getItem('cookieConsent')) {
@@ -134,13 +240,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Accept cookies
-    acceptBtn.addEventListener('click', function() {
+    acceptBtn?.addEventListener('click', function() {
         localStorage.setItem('cookieConsent', 'accepted');
         cookieBanner.style.display = 'none';
     });
 
     // Decline cookies
-    declineBtn.addEventListener('click', function() {
+    declineBtn?.addEventListener('click', function() {
         localStorage.setItem('cookieConsent', 'declined');
         cookieBanner.style.display = 'none';
     });
