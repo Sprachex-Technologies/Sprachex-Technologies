@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>Delete Shopkeeper Account — OrderBy</title>
+    <meta name="description" content="Request to delete your OrderBy Shopkeeper account. Your shop data will be permanently removed in accordance with privacy regulations."/>
+    <link rel="icon" type="image/png" href="../assets/favicon.png"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body class="bg-background-dark text-slate-50 font-display selection:bg-primary selection:text-white overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b hairline bg-background-dark/80 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between">
+            <a href="../index.html" class="flex items-center gap-3">
+                <img src="../assets/sprachex-mark.png" alt="Sprachex Technologies" class="h-10 w-auto logo-mark"/>
+                <div class="flex flex-col leading-none">
+                    <span class="text-white text-base font-extrabold tracking-[0.18em]">ORDERBY</span>
+                    <span class="text-slate-500 text-[10px] font-mono tracking-[0.32em] mt-1">SHOPKEEPER</span>
+                </div>
+            </a>
+            <a href="../index.html" class="text-slate-400 hover:text-white transition-colors text-sm font-medium">Back to Home</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="min-h-screen pt-32 pb-20 px-6">
+        <div class="max-w-2xl mx-auto">
+
+            <!-- Header -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-6">
+                    <span class="material-symbols-outlined text-3xl text-red-500">delete_outline</span>
+                    <h1 class="text-4xl md:text-5xl font-black text-white">Delete Shop Account</h1>
+                </div>
+                <p class="text-lg text-slate-400">Permanently delete your OrderBy Shopkeeper account and all shop data</p>
+            </div>
+
+            <!-- Warning Box -->
+            <div class="border border-red-500/30 bg-red-500/5 rounded-lg p-6 mb-8">
+                <div class="flex gap-4">
+                    <span class="material-symbols-outlined text-red-500 flex-shrink-0 mt-0.5">warning</span>
+                    <div>
+                        <h3 class="text-red-400 font-bold mb-2">This action cannot be undone</h3>
+                        <p class="text-slate-400 text-sm">Deleting your shop account will:</p>
+                        <ul class="text-slate-400 text-sm mt-3 space-y-1 ml-4">
+                            <li>• Permanently remove your shop profile and menu</li>
+                            <li>• Delete all order records from your dashboard</li>
+                            <li>• Remove access to customer order history and messages</li>
+                            <li>• Cancel active subscriptions or services</li>
+                            <li>• Disable your payment collection ability</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Information Section -->
+            <div class="bg-surface-dark/60 border hairline rounded-lg p-8 mb-8">
+                <h2 class="text-xl font-bold text-white mb-4">What happens when you delete your account?</h2>
+                <div class="space-y-4 text-slate-400">
+                    <div>
+                        <span class="font-semibold text-slate-300">Immediate Deactivation:</span>
+                        <p class="mt-1">Your shop will be immediately deactivated and removed from the OrderBy platform. Customers will no longer be able to place orders.</p>
+                    </div>
+                    <div>
+                        <span class="font-semibold text-slate-300">Data Deletion:</span>
+                        <p class="mt-1">All personal shop data (name, address, contact info, menu, settings) will be permanently deleted within 30 days in compliance with GDPR and privacy regulations.</p>
+                    </div>
+                    <div>
+                        <span class="font-semibold text-slate-300">Data We Retain (with reasons):</span>
+                        <p class="mt-1 text-sm">
+                            • <strong>Order receipts & transaction records:</strong> Retained for 7 years (India tax/GST compliance)<br/>
+                            • <strong>Payment history:</strong> Retained for dispute resolution & chargeback protection (180 days minimum)<br/>
+                            • <strong>Chat transcripts:</strong> Retained for 90 days to resolve customer disputes, then deleted<br/>
+                            • <strong>Anonymized analytics:</strong> Retained indefinitely (non-identifiable usage patterns)
+                        </p>
+                    </div>
+                    <div>
+                        <span class="font-semibold text-slate-300">Backup Data:</span>
+                        <p class="mt-1">Your data will be removed from all active systems. Standard server backups may retain data for up to 90 days before expiring.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- How to Delete Section -->
+            <div class="bg-primary/10 border border-primary/30 rounded-lg p-8 mb-8">
+                <h2 class="text-xl font-bold text-white mb-6">How to Delete Your Account</h2>
+                <div class="space-y-4">
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">1</div>
+                        <div>
+                            <h3 class="font-semibold text-white mb-1">Open the OrderBy Shopkeeper App</h3>
+                            <p class="text-slate-400 text-sm">Sign in with your shop account credentials</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">2</div>
+                        <div>
+                            <h3 class="font-semibold text-white mb-1">Go to Support Channel</h3>
+                            <p class="text-slate-400 text-sm">Navigate to the Chat or Support section in the app</p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">3</div>
+                        <div>
+                            <h3 class="font-semibold text-white mb-1">Type "account delete"</h3>
+                            <p class="text-slate-400 text-sm">Send a message in the support chat and type exactly: <span class="font-mono bg-background-dark/50 px-2 py-1 rounded text-sm">account delete</span></p>
+                        </div>
+                    </div>
+                    <div class="flex gap-4">
+                        <div class="flex-shrink-0 w-8 h-8 bg-primary text-white rounded-full flex items-center justify-center font-bold text-sm">4</div>
+                        <div>
+                            <h3 class="font-semibold text-white mb-1">Confirm & Verify Email</h3>
+                            <p class="text-slate-400 text-sm">Follow the confirmation link sent to your registered email address within 7 days</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Deletion Request Form -->
+            <div class="bg-surface-dark/60 border hairline rounded-lg p-8 mb-8">
+                <h2 class="text-xl font-bold text-white mb-6">Request Account Deletion</h2>
+                <p class="text-slate-400 mb-6 text-sm">If you're unable to delete from the app, submit a deletion request below:</p>
+
+                <form id="deleteAccountForm" class="space-y-6">
+
+                    <!-- Shop Email -->
+                    <div>
+                        <label for="email" class="block text-sm font-semibold text-slate-300 mb-2">
+                            Shop Email Address *
+                        </label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            required
+                            placeholder="shop@email.com"
+                            class="w-full px-4 py-3 bg-background-dark border hairline rounded text-slate-50 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
+                        />
+                        <p class="text-xs text-slate-500 mt-2">The email address associated with your shop account</p>
+                    </div>
+
+                    <!-- Shop Name/ID -->
+                    <div>
+                        <label for="shopName" class="block text-sm font-semibold text-slate-300 mb-2">
+                            Shop Name or ID (optional)
+                        </label>
+                        <input
+                            type="text"
+                            id="shopName"
+                            name="shopName"
+                            placeholder="Your shop name or ID"
+                            class="w-full px-4 py-3 bg-background-dark border hairline rounded text-slate-50 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
+                        />
+                        <p class="text-xs text-slate-500 mt-2">Helps us locate your account faster</p>
+                    </div>
+
+                    <!-- Reason -->
+                    <div>
+                        <label for="reason" class="block text-sm font-semibold text-slate-300 mb-2">
+                            Reason for deletion (optional)
+                        </label>
+                        <select
+                            id="reason"
+                            name="reason"
+                            class="w-full px-4 py-3 bg-background-dark border hairline rounded text-slate-50 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
+                        >
+                            <option value="">— Select a reason —</option>
+                            <option value="closing-shop">Closing my shop</option>
+                            <option value="not-using">Not using the service</option>
+                            <option value="privacy-concerns">Privacy concerns</option>
+                            <option value="found-alternative">Found alternative service</option>
+                            <option value="technical-issues">Technical issues</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <!-- Additional Message -->
+                    <div>
+                        <label for="message" class="block text-sm font-semibold text-slate-300 mb-2">
+                            Additional information (optional)
+                        </label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            rows="4"
+                            placeholder="Any additional details..."
+                            class="w-full px-4 py-3 bg-background-dark border hairline rounded text-slate-50 placeholder-slate-600 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent transition"
+                        ></textarea>
+                    </div>
+
+                    <!-- Confirmation Checkbox -->
+                    <div class="bg-red-500/5 border border-red-500/30 rounded-lg p-4">
+                        <label class="flex items-start gap-3 cursor-pointer">
+                            <input
+                                type="checkbox"
+                                id="confirmDeletion"
+                                name="confirmDeletion"
+                                required
+                                class="w-5 h-5 mt-0.5 accent-red-500"
+                            />
+                            <span class="text-sm text-slate-300">
+                                I understand that deleting my shop account is permanent and cannot be undone. I confirm that I want to permanently delete my account and all associated shop data. I understand that order receipts will be retained for tax compliance purposes.
+                            </span>
+                        </label>
+                    </div>
+
+                    <!-- Submit Button -->
+                    <button
+                        type="submit"
+                        class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-3 px-6 rounded transition-all duration-300 flex items-center justify-center gap-2"
+                    >
+                        <span class="material-symbols-outlined text-lg">delete_forever</span>
+                        <span>Request Account Deletion</span>
+                    </button>
+
+                    <!-- Cancel Link -->
+                    <a
+                        href="../index.html"
+                        class="block w-full text-center py-3 px-6 border hairline rounded text-slate-400 hover:text-white hover:border-slate-400 transition-colors"
+                    >
+                        Cancel
+                    </a>
+                </form>
+
+                <!-- Success Message (Hidden) -->
+                <div id="successMessage" class="hidden mt-6 bg-green-500/10 border border-green-500/30 rounded-lg p-6">
+                    <div class="flex gap-4">
+                        <span class="material-symbols-outlined text-green-500 flex-shrink-0">check_circle</span>
+                        <div>
+                            <h3 class="text-green-400 font-bold mb-2">Deletion Request Submitted</h3>
+                            <p class="text-slate-400 text-sm mb-3">
+                                We've received your account deletion request. A confirmation email has been sent to <span id="confirmEmail" class="font-semibold text-slate-300"></span>.
+                            </p>
+                            <p class="text-slate-400 text-sm mb-3">
+                                <strong>Next steps:</strong> Please click the confirmation link in the email within 7 days to complete the deletion process.
+                            </p>
+                            <p class="text-slate-400 text-sm">
+                                Your shop account will be permanently deleted within 30 days. Order records will be retained as per legal requirements.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- FAQ Section -->
+            <div class="mt-16">
+                <h2 class="text-2xl font-bold text-white mb-8">Frequently Asked Questions</h2>
+
+                <div class="space-y-6">
+                    <details class="bg-surface-dark/60 border hairline rounded-lg p-6 group cursor-pointer">
+                        <summary class="flex items-center justify-between font-semibold text-white">
+                            <span>How long does account deletion take?</span>
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                        </summary>
+                        <p class="text-slate-400 mt-4">Your shop is deactivated immediately after confirmation. All personal data is deleted within 30 days. Tax and payment records are retained for legal compliance (7 years minimum).</p>
+                    </details>
+
+                    <details class="bg-surface-dark/60 border hairline rounded-lg p-6 group cursor-pointer">
+                        <summary class="flex items-center justify-between font-semibold text-white">
+                            <span>What happens to pending orders?</span>
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                        </summary>
+                        <p class="text-slate-400 mt-4">Upon deletion request, you must resolve all pending orders with customers. Your shop will be marked as inactive and no new orders can be placed. Existing orders remain visible for dispute resolution purposes.</p>
+                    </details>
+
+                    <details class="bg-surface-dark/60 border hairline rounded-lg p-6 group cursor-pointer">
+                        <summary class="flex items-center justify-between font-semibold text-white">
+                            <span>Can I recover my account after deletion?</span>
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                        </summary>
+                        <p class="text-slate-400 mt-4">No, account deletion is permanent and cannot be undone. All shop data will be permanently removed. You can create a new shop account after deletion if needed.</p>
+                    </details>
+
+                    <details class="bg-surface-dark/60 border hairline rounded-lg p-6 group cursor-pointer">
+                        <summary class="flex items-center justify-between font-semibold text-white">
+                            <span>What about pending payments and payouts?</span>
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                        </summary>
+                        <p class="text-slate-400 mt-4">Any pending payouts will be processed before account deletion. Outstanding balances must be settled. Payment records and transaction history will be retained for 7 years (tax compliance) but will not be accessible through your account.</p>
+                    </details>
+
+                    <details class="bg-surface-dark/60 border hairline rounded-lg p-6 group cursor-pointer">
+                        <summary class="flex items-center justify-between font-semibold text-white">
+                            <span>What data is permanently deleted?</span>
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                        </summary>
+                        <p class="text-slate-400 mt-4">We permanently delete: shop profile, menu items, shop settings, preferences, customer reviews/ratings, and chat messages (after 90 days). We retain: order receipts (7 years), payment records (180 days minimum), and anonymized analytics.</p>
+                    </details>
+
+                    <details class="bg-surface-dark/60 border hairline rounded-lg p-6 group cursor-pointer">
+                        <summary class="flex items-center justify-between font-semibold text-white">
+                            <span>Do you need email confirmation?</span>
+                            <span class="material-symbols-outlined group-open:rotate-180 transition-transform">expand_more</span>
+                        </summary>
+                        <p class="text-slate-400 mt-4">Yes. We send a confirmation email to verify the deletion request. You must click the confirmation link within 7 days to complete the process. This ensures the deletion request is legitimate and prevents accidental account deletion.</p>
+                    </details>
+                </div>
+            </div>
+
+            <!-- Contact Support -->
+            <div class="mt-16 bg-surface-dark/60 border hairline rounded-lg p-8 text-center">
+                <h3 class="text-xl font-bold text-white mb-3">Need Help?</h3>
+                <p class="text-slate-400 mb-6">
+                    If you have questions about account deletion or need assistance, reach out to our support team via WhatsApp or email.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="https://wa.me/918240478198" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded transition-all duration-300">
+                        <span>WhatsApp: +91 8240478198</span>
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                    </a>
+                    <a href="mailto:support@orderby.com" class="inline-flex items-center gap-2 bg-primary hover:bg-primary-dark text-white font-bold py-3 px-6 rounded transition-all duration-300">
+                        <span>Email Support</span>
+                        <span class="material-symbols-outlined text-lg">arrow_forward</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t hairline bg-surface-dark/40 py-12 px-6">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <div>
+                    <h4 class="text-white font-bold mb-4">OrderBy</h4>
+                    <a href="../index.html" class="text-slate-400 hover:text-white text-sm transition-colors block mb-2">Home</a>
+                    <a href="../orderby.html" class="text-slate-400 hover:text-white text-sm transition-colors block mb-2">About OrderBy</a>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Legal</h4>
+                    <a href="../privacy-policy.html" class="text-slate-400 hover:text-white text-sm transition-colors block mb-2">Privacy Policy</a>
+                    <a href="../impressum.html" class="text-slate-400 hover:text-white text-sm transition-colors block mb-2">Impressum</a>
+                    <a href="delete-account-shopkeeper.html" class="text-slate-400 hover:text-white text-sm transition-colors block">Delete Account</a>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Support</h4>
+                    <a href="https://wa.me/918240478198" class="text-slate-400 hover:text-white text-sm transition-colors block mb-2">WhatsApp: +91 8240478198</a>
+                    <a href="mailto:support@orderby.com" class="text-slate-400 hover:text-white text-sm transition-colors block mb-2">Email Support</a>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-4">Company</h4>
+                    <p class="text-slate-400 text-sm">Sprachex Technologies</p>
+                    <p class="text-slate-400 text-sm mt-2">Kolkata, India</p>
+                </div>
+            </div>
+            <div class="border-t hairline pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-500 text-sm">© 2024 OrderBy by Sprachex Technologies. All rights reserved.</p>
+                <p class="text-slate-500 text-sm mt-4 md:mt-0">Order by phone, order by chat, order by app.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('deleteAccountForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+
+            const email = document.getElementById('email').value;
+            const shopName = document.getElementById('shopName').value;
+            const reason = document.getElementById('reason').value;
+            const message = document.getElementById('message').value;
+
+            const data = {
+                email,
+                shopName,
+                reason,
+                message,
+                timestamp: new Date().toISOString(),
+                requestType: 'shopkeeper_account_deletion',
+                appType: 'shopkeeper'
+            };
+
+            try {
+                const response = await fetch('/api/delete-account', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+
+                if (response.ok) {
+                    document.getElementById('deleteAccountForm').style.display = 'none';
+                    document.getElementById('successMessage').classList.remove('hidden');
+                    document.getElementById('confirmEmail').textContent = email;
+                } else {
+                    alert('Error submitting deletion request. Please try again or contact support.');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred. Please try again later or email support@orderby.com');
+            }
+        });
+    </script>
+
+</body>
+</html>
