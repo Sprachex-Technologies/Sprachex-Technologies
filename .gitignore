@@ -1,0 +1,32 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+*.swo
+
+# Design & Documentation (local only)
+*.docx
+*.pptx
+*.xlsx
+*.pdf
+
+# Asset files
+*.png
+*.jpg
+*.jpeg
+*.gif
+
+# Node
+node_modules/
+npm-debug.log
+
+# IDE
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Environment
+.env
+.env.local
