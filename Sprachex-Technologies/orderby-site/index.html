@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html class="dark" lang="en">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <title>OrderBy — Your Neighbourhood, Now on Your Phone | Sprachex Technologies</title>
+    <meta name="description" content="OrderBy is a hyperlocal commerce platform that brings neighbourhood shops online — discovery, ordering, OTP-verified handover, and a fully digital khata (udhaar). By Sprachex Technologies."/>
+    <link rel="icon" type="image/png" href="assets/favicon.png"/>
+    <meta property="og:title" content="OrderBy — Hyperlocal Commerce Platform"/>
+    <meta property="og:description" content="Bringing neighbourhood shops online — without taking away what makes them special."/>
+    <meta property="og:image" content="assets/orderby-logo.png"/>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script>
+        // Brand theme (standalone — this page does not load script.js)
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#E5252C",
+                        "primary-dark": "#B91C1C",
+                        "gold": "#F5A623",
+                        "silver": "#C7CCD4",
+                        "background-dark": "#0A0A0C",
+                        "surface-dark": "#101014",
+                        "glass-border": "rgba(255, 255, 255, 0.08)",
+                        "glass-surface": "rgba(255, 255, 255, 0.03)",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"],
+                        "mono": ["JetBrains Mono", "monospace"]
+                    },
+                    borderRadius: { "DEFAULT": "2px", "lg": "4px", "xl": "6px", "2xl": "8px", "full": "9999px" },
+                    boxShadow: {
+                        "glow": "0 0 24px rgba(229, 37, 44, 0.35)",
+                        "glass": "0 8px 32px 0 rgba(0, 0, 0, 0.37)"
+                    }
+                }
+            }
+        };
+    </script>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* OrderBy brand accents — pista green + orange on the Sprachex engineering base */
+        .ob-green { color: #93C572; }
+        .ob-orange { color: #FB8C00; }
+        .ob-card:hover { border-color: rgba(147, 197, 114, 0.45); box-shadow: 0 12px 40px -12px rgba(147, 197, 114, 0.18); }
+        .bg-ob-orb { background: radial-gradient(circle at 50% 40%, rgba(147, 197, 114, 0.07), transparent 60%); }
+        /* pista glow variant of the floating animation */
+        @keyframes glowPulseOb {
+            0%, 100% { filter: drop-shadow(0 0 12px rgba(147, 197, 114, 0.25)); }
+            50%      { filter: drop-shadow(0 0 28px rgba(251, 140, 0, 0.3)); }
+        }
+        .anim-float-ob { animation: floatY 7s ease-in-out infinite, glowPulseOb 7s ease-in-out infinite; }
+        @media (prefers-reduced-motion: reduce) { .anim-float-ob { animation: none !important; } }
+    </style>
+</head>
+<body class="bg-background-dark text-slate-50 font-display selection:bg-primary selection:text-white overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed top-0 left-0 right-0 z-50 border-b hairline bg-background-dark/80 backdrop-blur-xl">
+        <div class="max-w-7xl mx-auto px-6 h-[72px] flex items-center justify-between">
+            <a href="https://sprachex.com" class="flex items-center gap-3">
+                <img src="assets/sprachex-mark.png" alt="Sprachex Technologies" class="h-10 w-auto logo-mark"/>
+                <div class="flex flex-col leading-none">
+                    <span class="text-white text-base font-extrabold tracking-[0.18em]">SPRACHEX</span>
+                    <span class="text-slate-500 text-[10px] font-mono tracking-[0.32em] mt-1">TECHNOLOGIES</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center gap-10">
+                <a class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide" href="#why">Why OrderBy</a>
+                <a class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide" href="#apps">The Apps</a>
+                <a class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide" href="#flow">How It Works</a>
+                <a class="text-slate-400 hover:text-white transition-colors text-sm font-medium tracking-wide" href="#khata">Digital Khata</a>
+            </div>
+            <a href="mailto:contact@sprachex.com?subject=OrderBy"
+                class="btn-sheen hidden md:flex bg-primary hover:bg-primary-dark hover:shadow-glow transition-all duration-300 text-white font-bold text-sm px-6 py-2.5 rounded items-center gap-2">
+                <span>Get OrderBy</span>
+                <span class="material-symbols-outlined text-sm font-bold">arrow_forward</span>
+            </a>
+            <a href="https://sprachex.com" class="md:hidden text-white"><span class="material-symbols-outlined">arrow_back</span></a>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="relative min-h-[90vh] flex items-center pt-32 pb-20 px-6 overflow-hidden bg-blueprint">
+        <div class="absolute top-1/4 -left-32 w-[420px] h-[420px] bg-[#93C572]/10 rounded-full blur-[140px] pointer-events-none parallax parallax-1"></div>
+        <div class="absolute bottom-0 right-0 w-[380px] h-[380px] bg-[#FB8C00]/10 rounded-full blur-[120px] pointer-events-none parallax parallax-2"></div>
+
+        <div class="relative z-10 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+            <div class="lg:col-span-7 flex flex-col gap-8 hero-stagger">
+                <div class="inline-flex items-center gap-3 self-start px-4 py-2 border hairline bg-glass-surface backdrop-blur-sm rounded">
+                    <span class="w-2 h-2 rounded-full bg-[#93C572] animate-pulse"></span>
+                    <span class="text-xs font-mono text-slate-300 tracking-[0.2em] uppercase">By Sprachex Technologies · Live in Kolkata</span>
+                </div>
+
+                <h1 class="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[1.05] tracking-tight">
+                    Your neighbourhood,<br/>
+                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-[#93C572] to-[#FB8C00] text-shimmer">now on your phone.</span>
+                </h1>
+
+                <p class="text-lg md:text-xl text-slate-400 max-w-xl font-light leading-relaxed">
+                    OrderBy brings neighbourhood shops online — without taking away what makes them special. The shop keeps its customers, its pricing, its cash. We're the rails.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 mt-2">
+                    <a href="#flow" class="btn-sheen bg-[#93C572] hover:bg-[#7DAF5C] transition-all duration-300 text-background-dark font-bold text-base px-8 py-4 rounded flex items-center justify-center gap-2">
+                        See How It Works
+                        <span class="material-symbols-outlined">arrow_downward</span>
+                    </a>
+                    <a href="mailto:contact@sprachex.com?subject=OrderBy for my shop" class="bg-transparent border hairline hover:border-white/30 hover:bg-white/5 text-white font-medium text-base px-8 py-4 rounded flex items-center justify-center gap-2 transition-colors">
+                        Bring My Shop Online
+                    </a>
+                </div>
+            </div>
+
+            <div class="lg:col-span-5 hidden lg:flex items-center justify-center relative parallax parallax-2">
+                <div class="absolute w-[380px] h-[380px] bg-[#93C572]/10 rounded-full blur-[100px]"></div>
+                <img src="assets/orderby-logo.png" alt="OrderBy" class="relative w-[340px] anim-float-ob"/>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Problem / Why -->
+    <section class="py-24 px-6 border-t hairline" id="why">
+        <div class="max-w-7xl mx-auto flex flex-col gap-14">
+            <div class="max-w-2xl">
+                <p class="section-index mb-3" style="color:#93C572;">01 — WHY ORDERBY</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-white">The corner shop is losing the digital race</h2>
+                <p class="text-slate-400 mt-4 leading-relaxed">Your local shop has everything going for it — except a way onto your phone. Here's the system OrderBy upgrades:</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-white/[0.08] border hairline rounded overflow-hidden">
+                <div class="bg-background-dark p-8 flex flex-col gap-4 hover:bg-surface-dark transition-colors group">
+                    <span class="material-symbols-outlined ob-orange text-3xl icon-pop">visibility_off</span>
+                    <h3 class="text-xl font-bold text-white">Invisible online</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">No app, no listing. When customers reach for their phone, the shop next door simply isn't there — and the everyday basket drifts to 10-minute delivery giants.</p>
+                </div>
+                <div class="bg-background-dark p-8 flex flex-col gap-4 hover:bg-surface-dark transition-colors group">
+                    <span class="material-symbols-outlined ob-orange text-3xl icon-pop">menu_book</span>
+                    <h3 class="text-xl font-bold text-white">Khata in a notebook</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Credit (udhaar) is a shop's biggest loyalty tool — yet it lives on paper: error-prone, untrackable, and impossible to grow with.</p>
+                </div>
+                <div class="bg-background-dark p-8 flex flex-col gap-4 hover:bg-surface-dark transition-colors group">
+                    <span class="material-symbols-outlined ob-orange text-3xl icon-pop">lock</span>
+                    <h3 class="text-xl font-bold text-white">All-or-nothing tech</h3>
+                    <p class="text-sm text-slate-400 leading-relaxed">Existing platforms force shops to surrender fulfilment, pricing and customers — or stay offline. Most stay offline.</p>
+                </div>
+            </div>
+
+            <!-- The upgrade -->
+            <div class="glass-card ob-card rounded-xl p-10 md:p-12">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+                    <div>
+                        <h3 class="text-2xl md:text-3xl font-bold text-white mb-4">The shop's superpowers are exactly what e-commerce can't copy</h3>
+                        <p class="text-slate-400 leading-relaxed">The shopkeeper knows you by name. The shop is minutes away, open late, no minimum order. And it extends credit on trust. So we don't replace the shop — <span class="text-white font-medium">we digitise its strengths.</span></p>
+                    </div>
+                    <div class="flex flex-col divide-y divide-white/[0.08] border-t border-b hairline">
+                        <div class="py-3 flex items-center gap-4">
+                            <span class="material-symbols-outlined ob-green">handshake</span>
+                            <div><span class="text-white font-bold text-sm">Trust & relationships</span><span class="text-slate-500 text-sm block">Loyalty money can't buy</span></div>
+                        </div>
+                        <div class="py-3 flex items-center gap-4">
+                            <span class="material-symbols-outlined ob-green">near_me</span>
+                            <div><span class="text-white font-bold text-sm">Proximity</span><span class="text-slate-500 text-sm block">Your para, your street, your lane</span></div>
+                        </div>
+                        <div class="py-3 flex items-center gap-4">
+                            <span class="material-symbols-outlined ob-green">receipt_long</span>
+                            <div><span class="text-white font-bold text-sm">Credit — udhaar</span><span class="text-slate-500 text-sm block">The original BNPL, built on trust</span></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Apps -->
+    <section class="py-24 px-6 border-t hairline bg-ob-orb" id="apps">
+        <div class="max-w-7xl mx-auto flex flex-col gap-14">
+            <div class="text-center max-w-2xl mx-auto">
+                <p class="section-index mb-3" style="color:#93C572;">02 — THE APPS</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-white">Two apps. One neighbourhood.</h2>
+                <p class="text-slate-400 mt-4">Customers discover and order from the shops next door; shops run everything end-to-end and keep full ownership of their business.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="glass-card ob-card tilt-card rounded-xl p-10 flex flex-col gap-6">
+                    <div class="flex items-center justify-between">
+                        <span class="material-symbols-outlined ob-green text-5xl">person_pin_circle</span>
+                        <span class="px-3 py-1 rounded bg-[#93C572]/15 ob-green text-xs font-mono font-bold tracking-[0.2em] uppercase border border-[#93C572]/40">Customer App</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">Shop your street from your sofa</h3>
+                    <ul class="flex flex-col gap-3 text-sm text-slate-400">
+                        <li class="flex gap-3"><span class="material-symbols-outlined ob-green text-lg">check_circle</span>Discover nearby shops on a map and list</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined ob-green text-lg">check_circle</span>Order for delivery or counter pickup</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined ob-green text-lg">check_circle</span>Track your order and share the OTP at handover</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined ob-green text-lg">check_circle</span>Manage your udhaar — see and settle your khata anytime</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card ob-card tilt-card rounded-xl p-10 flex flex-col gap-6">
+                    <div class="flex items-center justify-between">
+                        <span class="material-symbols-outlined ob-orange text-5xl">storefront</span>
+                        <span class="px-3 py-1 rounded bg-[#FB8C00]/15 ob-orange text-xs font-mono font-bold tracking-[0.2em] uppercase border border-[#FB8C00]/40">Shopkeeper App</span>
+                    </div>
+                    <h3 class="text-2xl font-bold text-white">Run the shop, not the tech</h3>
+                    <ul class="flex flex-col gap-3 text-sm text-slate-400">
+                        <li class="flex gap-3"><span class="material-symbols-outlined ob-orange text-lg">check_circle</span>Receive, accept and pack orders end-to-end</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined ob-orange text-lg">check_circle</span>Take payment your way — cash, UPI, or khata</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined ob-orange text-lg">check_circle</span>Manage inventory and plan stock</li>
+                        <li class="flex gap-3"><span class="material-symbols-outlined ob-orange text-lg">check_circle</span>Keep your customers, your pricing, your cash — always</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="py-24 px-6 border-t hairline" id="flow">
+        <div class="max-w-7xl mx-auto flex flex-col gap-14">
+            <div class="max-w-2xl">
+                <p class="section-index mb-3" style="color:#93C572;">03 — HOW IT WORKS</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-white">From "I need atta" to "order complete" — in minutes</h2>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-px bg-white/[0.08] border hairline rounded overflow-hidden">
+                <div class="bg-background-dark p-8 flex flex-col gap-4 hover:bg-surface-dark transition-colors group">
+                    <div class="flex items-center justify-between">
+                        <span class="material-symbols-outlined ob-green text-3xl icon-pop">map</span>
+                        <span class="font-mono text-2xl font-bold text-slate-700">1</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Discover</h3>
+                    <p class="text-sm text-slate-400">Open the app and see the shops around you — on a map and a list, minutes away.</p>
+                </div>
+                <div class="bg-background-dark p-8 flex flex-col gap-4 hover:bg-surface-dark transition-colors group">
+                    <div class="flex items-center justify-between">
+                        <span class="material-symbols-outlined ob-green text-3xl icon-pop">shopping_cart</span>
+                        <span class="font-mono text-2xl font-bold text-slate-700">2</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Order</h3>
+                    <p class="text-sm text-slate-400">Build your cart and check out — choose home delivery or counter pickup.</p>
+                </div>
+                <div class="bg-background-dark p-8 flex flex-col gap-4 hover:bg-surface-dark transition-colors group">
+                    <div class="flex items-center justify-between">
+                        <span class="material-symbols-outlined ob-green text-3xl icon-pop">inventory_2</span>
+                        <span class="font-mono text-2xl font-bold text-slate-700">3</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Shop prepares</h3>
+                    <p class="text-sm text-slate-400">The shopkeeper accepts and packs your order — same shelves, same hands you trust.</p>
+                </div>
+                <div class="bg-background-dark p-8 flex flex-col gap-4 hover:bg-surface-dark transition-colors group">
+                    <div class="flex items-center justify-between">
+                        <span class="material-symbols-outlined ob-orange text-3xl icon-pop">pin</span>
+                        <span class="font-mono text-2xl font-bold text-slate-700">4</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">OTP handover</h3>
+                    <p class="text-sm text-slate-400">A 6-digit OTP verifies the handover at your door or the counter — every single time.</p>
+                </div>
+                <div class="bg-background-dark p-8 flex flex-col gap-4 hover:bg-surface-dark transition-colors group">
+                    <div class="flex items-center justify-between">
+                        <span class="material-symbols-outlined ob-orange text-3xl icon-pop">payments</span>
+                        <span class="font-mono text-2xl font-bold text-slate-700">5</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Pay your way</h3>
+                    <p class="text-sm text-slate-400">Cash, UPI, or udhaar (khata) — money flows directly between you and the shop.</p>
+                </div>
+                <div class="bg-background-dark p-8 flex flex-col gap-4 hover:bg-surface-dark transition-colors group">
+                    <div class="flex items-center justify-between">
+                        <span class="material-symbols-outlined ob-green text-3xl icon-pop">task_alt</span>
+                        <span class="font-mono text-2xl font-bold text-slate-700">6</span>
+                    </div>
+                    <h3 class="text-lg font-bold text-white">Complete</h3>
+                    <p class="text-sm text-slate-400">The order closes only when payment is registered — no unpaid deliveries slip through.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Khata -->
+    <section class="py-24 px-6 border-t hairline bg-ob-orb" id="khata">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-5">
+                <p class="section-index mb-3" style="color:#93C572;">04 — DIGITAL KHATA</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-white leading-tight">The notebook, upgraded to a real ledger</h2>
+                <p class="text-slate-400 mt-6 leading-relaxed">
+                    Udhaar is the original buy-now-pay-later — built on trust, run on paper. OrderBy makes it digital without losing the trust: culturally native, and the reason shops stay.
+                </p>
+            </div>
+            <div class="lg:col-span-7 grid grid-cols-1 gap-4">
+                <div class="glass-card ob-card rounded-xl p-8 flex gap-6 items-start">
+                    <span class="material-symbols-outlined ob-green text-3xl mt-1">handshake</span>
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-1">Two-way handshake</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">The shop requests udhaar; the customer accepts on their phone. No more "he said / she said" — both sides agree before it's booked.</p>
+                    </div>
+                </div>
+                <div class="glass-card ob-card rounded-xl p-8 flex gap-6 items-start">
+                    <span class="material-symbols-outlined ob-green text-3xl mt-1">account_balance</span>
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-1">A real ledger</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Every debit and repayment is recorded. Balances are derived, never guessed. The notebook becomes an auditable account both sides can trust.</p>
+                    </div>
+                </div>
+                <div class="glass-card ob-card rounded-xl p-8 flex gap-6 items-start">
+                    <span class="material-symbols-outlined ob-green text-3xl mt-1">verified</span>
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-1">Settle anytime</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Customers see their balance and settle monthly, just like always — except now nothing is lost, disputed, or forgotten.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vs the present system -->
+    <section class="py-24 px-6 border-t hairline">
+        <div class="max-w-7xl mx-auto flex flex-col gap-14">
+            <div class="text-center max-w-2xl mx-auto">
+                <p class="section-index mb-3" style="color:#93C572;">05 — THE UPGRADE</p>
+                <h2 class="text-3xl md:text-5xl font-bold text-white">Not another delivery app</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-card rounded-xl p-8 flex flex-col gap-4">
+                    <span class="font-mono text-xs text-slate-500 tracking-[0.2em] uppercase">vs Quick-commerce</span>
+                    <p class="text-sm text-slate-500 leading-relaxed"><span class="text-slate-400 font-bold">Them:</span> replace the shop with dark stores and 10-minute couriers.</p>
+                    <p class="text-sm leading-relaxed"><span class="ob-green font-bold">OrderBy:</span> <span class="text-slate-300">we empower the existing shop — its stock, its staff, its street.</span></p>
+                </div>
+                <div class="glass-card rounded-xl p-8 flex flex-col gap-4">
+                    <span class="font-mono text-xs text-slate-500 tracking-[0.2em] uppercase">vs Marketplaces</span>
+                    <p class="text-sm text-slate-500 leading-relaxed"><span class="text-slate-400 font-bold">Them:</span> own the customer; the shop is just a faceless seller.</p>
+                    <p class="text-sm leading-relaxed"><span class="ob-green font-bold">OrderBy:</span> <span class="text-slate-300">the shop owns the customer and the relationship. We're the rails.</span></p>
+                </div>
+                <div class="glass-card rounded-xl p-8 flex flex-col gap-4">
+                    <span class="font-mono text-xs text-slate-500 tracking-[0.2em] uppercase">vs Pen & paper</span>
+                    <p class="text-sm text-slate-500 leading-relaxed"><span class="text-slate-400 font-bold">Today:</span> no discovery, no online orders, khata in a notebook.</p>
+                    <p class="text-sm leading-relaxed"><span class="ob-green font-bold">OrderBy:</span> <span class="text-slate-300">digital discovery, orders, and a real khata — at kirana-friendly cost.</span></p>
+                </div>
+            </div>
+
+            <div class="glass-panel rounded-xl p-8 md:p-10 text-center">
+                <p class="text-lg md:text-xl text-slate-300 leading-relaxed max-w-3xl mx-auto">
+                    Shops pay a simple subscription for discovery, orders, khata and analytics. Money always flows directly shop ↔ customer — <span class="text-white font-bold">we never touch the cash.</span> We only win when the shop sells more.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-28 px-6 relative bg-blueprint border-t hairline">
+        <div class="absolute inset-0 flex justify-center items-center pointer-events-none">
+            <div class="w-full max-w-lg h-96 bg-[#93C572]/5 blur-[110px] rounded-full"></div>
+        </div>
+        <div class="max-w-4xl mx-auto text-center relative z-10 flex flex-col items-center gap-8">
+            <img src="assets/orderby-logo.png" alt="OrderBy" class="w-24"/>
+            <h2 class="text-4xl md:text-6xl font-black text-white">Let's digitise our world — one neighbourhood at a time.</h2>
+            <p class="text-xl text-slate-400 max-w-2xl">Whether you run a shop or shop your street — OrderBy is built for you.</p>
+            <div class="flex flex-col sm:flex-row gap-4">
+                <a href="mailto:contact@sprachex.com?subject=OrderBy for my shop" class="btn-sheen bg-[#93C572] hover:bg-[#7DAF5C] transition-all duration-300 text-background-dark font-extrabold text-lg px-10 py-5 rounded inline-flex items-center justify-center gap-3">
+                    <span>Bring My Shop Online</span>
+                    <span class="material-symbols-outlined">storefront</span>
+                </a>
+                <a href="mailto:contact@sprachex.com?subject=OrderBy" class="bg-transparent border hairline hover:border-white/30 hover:bg-white/5 text-white font-medium text-lg px-10 py-5 rounded inline-flex items-center justify-center gap-3 transition-colors">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t hairline bg-[#050506] pt-16 pb-8 px-6">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-12 gap-12 mb-16">
+            <div class="md:col-span-5">
+                <div class="flex items-center gap-3 mb-6">
+                    <img src="assets/sprachex-mark.png" alt="Sprachex" class="h-9 w-auto"/>
+                    <div class="flex flex-col leading-none">
+                        <span class="text-white text-sm font-extrabold tracking-[0.18em]">SPRACHEX</span>
+                        <span class="text-slate-500 text-[9px] font-mono tracking-[0.32em] mt-1">TECHNOLOGIES</span>
+                    </div>
+                </div>
+                <p class="text-slate-500 text-sm leading-relaxed mb-6">
+                    German engineering philosophy in AI, software and automation.<br/>
+                    Operating in India and Germany.
+                </p>
+                <div class="flex flex-col gap-1.5 text-sm text-slate-500">
+                    <span class="text-slate-400 font-medium">Sprachex Technologies Private Limited</span>
+                    <span>P 124 Jogendra Garden, Haltu,<br/>Kolkata, West Bengal, India — 700078</span>
+                    <span class="font-mono text-xs mt-2 text-slate-600">CIN: U62090WB2025PTC285518</span>
+                </div>
+            </div>
+            <div class="md:col-span-2">
+                <h3 class="text-white font-bold mb-4 text-sm tracking-wide">Company</h3>
+                <ul class="space-y-2">
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="https://sprachex.com/#about">About Us</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="https://sprachex.com/#services">Services</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="https://sprachex.com/#products">Products</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="https://sprachex.com/#tech">Technology</a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-3">
+                <h3 class="text-white font-bold mb-4 text-sm tracking-wide">Contact</h3>
+                <ul class="space-y-2">
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="mailto:contact@sprachex.com">contact@sprachex.com</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="tel:+919007896473">+91 90078 96473</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="https://wa.me/12013496997" target="_blank" rel="noopener noreferrer">+1 201 349 6997 (WhatsApp)</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="https://www.linkedin.com/company/110510961/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="md:col-span-2">
+                <h3 class="text-white font-bold mb-4 text-sm tracking-wide">Legal</h3>
+                <ul class="space-y-2">
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="https://sprachex.com/impressum.html">Impressum</a></li>
+                    <li><a class="text-slate-500 hover:text-primary text-sm transition-colors" href="https://sprachex.com/impressum.html#privacy">Data Protection</a></li>
+                </ul>
+                <div class="mt-6 flex items-center gap-2">
+                    <span class="de-flag-bar"><span></span><span></span><span></span></span>
+                    <span class="font-mono text-[10px] text-slate-600 tracking-[0.2em] uppercase">GDPR / DSGVO</span>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto pt-8 border-t hairline flex flex-col md:flex-row justify-between items-center gap-4">
+            <p class="text-slate-600 text-sm font-mono">© 2026 Sprachex Technologies Private Limited. All rights reserved.</p>
+            <p class="text-slate-600 text-xs font-mono tracking-wide">Deutsch. Innovativ. Global gedacht.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
