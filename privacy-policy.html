@@ -116,8 +116,7 @@
                         <li class="flex gap-3"><span class="text-primary">•</span> Name, phone number, and email address</li>
                         <li class="flex gap-3"><span class="text-primary">•</span> Delivery address and location data</li>
                         <li class="flex gap-3"><span class="text-primary">•</span> Order history and preferences</li>
-                        <li class="flex gap-3"><span class="text-primary">•</span> Payment information (processed securely)</li>
-                        <li class="flex gap-3"><span class="text-primary">•</span> Device ID and IP address for security</li>
+                        <li class="flex gap-3"><span class="text-primary">•</span> Shop owner's UPI ID (for direct payment by customer)</li>
                         <li class="flex gap-3"><span class="text-primary">•</span> OTP verification data</li>
                     </ul>
                 </div>
@@ -126,11 +125,11 @@
                     <h3 class="text-xl font-bold text-white">2.2 Shop Owner Data</h3>
                     <ul class="space-y-2 ml-6 text-slate-400">
                         <li class="flex gap-3"><span class="text-primary">•</span> Business details and shop information</li>
-                        <li class="flex gap-3"><span class="text-primary">•</span> Bank account information (PCI-DSS compliant)</li>
+                        <li class="flex gap-3"><span class="text-primary">•</span> UPI ID for receiving direct customer payments</li>
                         <li class="flex gap-3"><span class="text-primary">•</span> Shop inventory and pricing data</li>
-                        <li class="flex gap-3"><span class="text-primary">•</span> Transaction and settlement records</li>
+                        <li class="flex gap-3"><span class="text-primary">•</span> Order records and order history</li>
                         <li class="flex gap-3"><span class="text-primary">•</span> Digital Khata (credit ledger) records</li>
-                        <li class="flex gap-3"><span class="text-primary">•</span> Government-issued identification</li>
+                        <li class="flex gap-3"><span class="text-primary">•</span> Government-issued identification (for KYC verification)</li>
                     </ul>
                 </div>
 
@@ -142,6 +141,19 @@
                         <li class="flex gap-3"><span class="text-primary">•</span> Cookies and similar tracking technologies</li>
                         <li class="flex gap-3"><span class="text-primary">•</span> Geolocation data (with user consent)</li>
                         <li class="flex gap-3"><span class="text-primary">•</span> Performance and error logging</li>
+                    </ul>
+                </div>
+
+                <div class="bg-primary/10 border border-primary/30 rounded-lg p-6 space-y-4">
+                    <h3 class="text-xl font-bold text-white">2.4 Important Clarification: OrderBy as a Marketplace</h3>
+                    <p class="text-slate-400">
+                        <strong>OrderBy is a marketplace platform, not a financial intermediary or payment processor.</strong> We clarify the following:
+                    </p>
+                    <ul class="space-y-2 ml-6 text-slate-400">
+                        <li class="flex gap-3"><span class="text-primary">•</span> <strong>Customer Payments:</strong> Customers pay shop owners directly via UPI. OrderBy does not process, hold, or settle customer payments.</li>
+                        <li class="flex gap-3"><span class="text-primary">•</span> <strong>UPI IDs:</strong> We only store the shop owner's UPI ID to facilitate direct customer payments. We do not store customer payment details.</li>
+                        <li class="flex gap-3"><span class="text-primary">•</span> <strong>Shopkeeper Subscriptions:</strong> Subscription payments are processed by Razorpay (third-party PCI-DSS compliant processor). OrderBy does not store or handle card/bank details.</li>
+                        <li class="flex gap-3"><span class="text-primary">•</span> <strong>No Fund Settlement:</strong> OrderBy does not hold, transfer, or settle funds between customers and shops. All transactions occur directly between parties.</li>
                     </ul>
                 </div>
             </div>
@@ -156,7 +168,7 @@
                 <ul class="space-y-3 ml-6 text-slate-400">
                     <li class="flex gap-3">
                         <span class="text-gold font-bold">Service Delivery:</span>
-                        <span>Processing orders, managing digital khata, handling payments, and providing customer support</span>
+                        <span>Processing orders, managing digital khata, facilitating direct UPI payments between customers and shops, and providing customer support</span>
                     </li>
                     <li class="flex gap-3">
                         <span class="text-gold font-bold">Verification & Security:</span>
@@ -175,8 +187,8 @@
                         <span>Meeting legal obligations, tax reporting, and regulatory requirements</span>
                     </li>
                     <li class="flex gap-3">
-                        <span class="text-gold font-bold">Settlement & Payments:</span>
-                        <span>Processing payments and settlements between customers and shops</span>
+                        <span class="text-gold font-bold">Subscription Processing:</span>
+                        <span>Managing shopkeeper subscription payments via Razorpay (third-party processor). OrderBy does not store or process card/bank details.</span>
                     </li>
                 </ul>
             </div>
@@ -190,10 +202,9 @@
                 <div class="bg-surface-dark/40 border hairline rounded-lg p-6">
                     <p class="text-slate-400 mb-4">We share your data only when necessary and under strict data protection agreements:</p>
                     <ul class="space-y-2 ml-6 text-slate-400">
-                        <li class="flex gap-3"><span class="text-primary">•</span> <strong>Payment Processors:</strong> For secure payment processing (PCI-DSS compliant)</li>
+                        <li class="flex gap-3"><span class="text-primary">•</span> <strong>Subscription Payment Processor (Razorpay):</strong> For processing shopkeeper subscription payments only. No customer payment data is shared.</li>
                         <li class="flex gap-3"><span class="text-primary">•</span> <strong>Logistics Partners:</strong> For delivery coordination (with customer consent)</li>
-                        <li class="flex gap-3"><span class="text-primary">•</span> <strong>Financial Institutions:</strong> For settlement and banking (required by law)</li>
-                        <li class="flex gap-3"><span class="text-primary">•</span> <strong>Government Authorities:</strong> As required by law (with legal notices)</li>
+                        <li class="flex gap-3"><span class="text-primary">•</span> <strong>Government Authorities:</strong> As required by law and for tax/regulatory compliance (with legal notices)</li>
                         <li class="flex gap-3"><span class="text-primary">•</span> <strong>Service Providers:</strong> Cloud hosting, analytics, support (Data Processing Agreements in place)</li>
                     </ul>
                 </div>
